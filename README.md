@@ -1,1 +1,3 @@
 # ShoppIt
+
+## Project Overview
