@@ -6,3 +6,6 @@ ShoppIt is a diet planning app that allows users to make shopping lists of purch
 
 This project is associated with the SOFTENG 310 course at the University of Auckland.
 
+## References
+
+Issue templates from: https://github.com/stevemao/github-issue-templates
