@@ -1,19 +1,31 @@
 package database.dataModels;
 
-public class foodItem {
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "FOOD_ITEMS")
+public class FoodItem {
+    @Id
+    @GeneratedValue
+    private int id;
+    @Column(name = "product_name")
     private String productName;
+    @Column(name = "image_filename")
     private String imgFilename;
+    @Column(name = "brand")
     private String brand;
-    private String department;
+    @Column(name = "diet_classification")
     private String dietClassification;
+    @Column(name = "weight")
     private int weight;
+    @Column(name = "total_calories")
     private int totalCalories;
 
-    public foodItem(String productName, String imgFilename, String brand, String department, String dietClassification, int weight, int totalCalories) {
+
+    public FoodItem(String productName, String imgFilename, String brand, String dietClassification, int weight, int totalCalories) {
         this.productName = productName;
         this.imgFilename = imgFilename;
         this.brand = brand;
-        this.department = department;
         this.dietClassification = dietClassification;
         this.weight = weight;
         this.totalCalories = totalCalories;
@@ -31,20 +43,23 @@ public class foodItem {
         return brand;
     }
 
-    public String getDepartment() {
-        return department;
-    }
-
     public String getDietClassification() {
         return dietClassification;
     }
 
+    /**
+     * @return weight in grams
+     */
     public int getWeight() {
         return weight;
     }
 
     public int getTotalCalories() {
         return totalCalories;
+    }
+
+    public int getId() {
+        return id;
     }
 }
 
