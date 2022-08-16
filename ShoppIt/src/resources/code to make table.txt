@@ -1,0 +1,27 @@
+DatabaseManager data = new DatabaseManager();
+		ArrayList<FoodItem> foodTable = new ArrayList();
+		foodTable.add(new FoodItem("Apples", "apple.jpg", "Yummy", "fruit and vegetables", 100, 52));
+		foodTable.add(new FoodItem("Bananas", "banana.jpg", "Dole", "fruit and vegetables", 100, 90));
+		foodTable.add(new FoodItem("Broccoli", "broccoli.jpg", "", "fruit and vegetables", 250, 88));
+		foodTable.add(new FoodItem("Carrots", "carrot.jpg", "", "fruit and vegetables", 46, 16));
+		foodTable.add(new FoodItem("Chicken breast", "chicken_breast.jpg", "", "meat", 189, 227));
+		foodTable.add(new FoodItem("Eggs", "egg.jpg", "Henergy", "animal products", 50, 72));
+		foodTable.add(new FoodItem("Greek yogurt", "greek_yogurt.jpg", "Yoplait", "animal products", 1000, 600));
+		foodTable.add(new FoodItem("Milk", "milk.png", "Anchor", "animal products", 1500, 700));
+		foodTable.add(new FoodItem("Olive oil", "olive_oil.png", "LugliO", "cooking ingredients", 500, 4200));
+		foodTable.add(new FoodItem("Pasta", "pasta.jpg", "Diamond", "rice and pasta", 250, 392));
+		foodTable.add(new FoodItem("Pistachios", "pistachios.jpg", "Graze", "nuts and seeds", 400, 800));
+		foodTable.add(new FoodItem("Potatoes", "potatoes.jpg", "", "fruit and vegetables", 5000, 4669));
+		foodTable.add(new FoodItem("Rice", "rice.jpg", "", "rice and pasta", 1000, 1300));
+		foodTable.add(new FoodItem("Spinach", "spinach.jpg", "", "fruit and vegetables", 180, 41));
+		foodTable.add(new FoodItem("Steak", "steak.jpg", "", "meat", 221, 614));
+		foodTable.add(new FoodItem("Tasty cheese", "tasty_cheese.jpg", "Alpine", "animal products", 1000, 3636));
+		foodTable.add(new FoodItem("Toast bread", "tip_top_bread.png", "Tip Top", "baked goods", 1258, 4811));
+		foodTable.add(new FoodItem("Ice cream", "tip_top_ice_cream.jpg", "Tip Top", "snacks and sweets", 2000, 4120));
+		foodTable.add(new FoodItem("Tomatoes", "tomato.jpg", "", "fruit and vegetables", 123, 22));
+		foodTable.add(new FoodItem("Hazelnut Chocolate", "whittakers_hazelnut.png", "Whittaker's", "snacks and sweets", 250, 1450));
+
+		for( FoodItem food : foodTable){
+			System.out.println(food.getId());
+			data.addObject(food);
+		}
