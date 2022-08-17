@@ -28,7 +28,7 @@
             <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <TextField text="Title" GridPane.columnSpan="2">
+            <TextField fx:id="NewListTitle" text="Title" GridPane.columnSpan="2">
                <font>
                   <Font size="34.0" />
                </font>
@@ -36,7 +36,7 @@
                   <Insets left="20.0" right="20.0" top="20.0" />
                </GridPane.margin>
             </TextField>
-            <TextField text="Description: " GridPane.columnSpan="2" GridPane.rowIndex="1" GridPane.valignment="TOP">
+            <TextField fx:id="NewListDescription" text="Description: " GridPane.columnSpan="2" GridPane.rowIndex="1" GridPane.valignment="TOP">
                <font>
                   <Font size="16.0" />
                </font>
@@ -44,12 +44,12 @@
                   <Insets left="20.0" right="20.0" top="10.0" />
                </GridPane.margin>
             </TextField>
-            <Button mnemonicParsing="false" text="Add Ingredient" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+            <Button fx:id="AddItemButton" mnemonicParsing="false" text="Add Item" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Suggestions:" GridPane.rowIndex="3">
+            <Text fx:id="SuggestionsText" strokeType="OUTSIDE" strokeWidth="0.0" text="Suggestions:" GridPane.rowIndex="3">
                <font>
                   <Font size="24.0" />
                </font>
@@ -57,7 +57,7 @@
                   <Insets left="20.0" />
                </GridPane.margin>
             </Text>
-            <Button mnemonicParsing="false" text="Save" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="6">
+            <Button fx:id="saveButton" mnemonicParsing="false" text="Save" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="6">
                <font>
                   <Font size="20.0" />
                </font>
@@ -65,15 +65,15 @@
                   <Insets right="20.0" />
                </GridPane.margin>
             </Button>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="TOP">
+            <ImageView fx:id="SuggestionImage_1" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="TOP">
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
             </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="TOP" />
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="TOP" />
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="60.0" layoutY="590.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="TOP" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Suggestion #1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="BOTTOM">
+            <ImageView fx:id="SuggestionImage_2" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="TOP" />
+            <ImageView fx:id="SuggestionImage_3" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="TOP" />
+            <ImageView fx:id="SuggestionImage_4" fitHeight="150.0" fitWidth="200.0" layoutX="60.0" layoutY="590.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="TOP" />
+            <Text fx:id="SuggestionName_1" strokeType="OUTSIDE" strokeWidth="0.0" text="Suggestion #1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="BOTTOM">
                <GridPane.margin>
                   <Insets bottom="10.0" />
                </GridPane.margin>
@@ -81,7 +81,7 @@
                   <Font size="20.0" />
                </font>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Suggestion #4" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="BOTTOM">
+            <Text fx:id="SuggestionName_4" strokeType="OUTSIDE" strokeWidth="0.0" text="Suggestion #4" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="BOTTOM">
                <font>
                   <Font size="20.0" />
                </font>
@@ -89,7 +89,7 @@
                   <Insets bottom="10.0" />
                </GridPane.margin>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Suggestion #3" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="BOTTOM">
+            <Text fx:id="SuggestionName_3" strokeType="OUTSIDE" strokeWidth="0.0" text="Suggestion #3" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="BOTTOM">
                <font>
                   <Font size="20.0" />
                </font>
@@ -97,7 +97,7 @@
                   <Insets bottom="10.0" />
                </GridPane.margin>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Suggestion #2" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="BOTTOM">
+            <Text fx:id="SuggestionName_2" strokeType="OUTSIDE" strokeWidth="0.0" text="Suggestion #2" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="BOTTOM">
                <font>
                   <Font size="20.0" />
                </font>
