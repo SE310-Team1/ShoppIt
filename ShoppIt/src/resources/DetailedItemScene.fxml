@@ -23,7 +23,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Item Title" GridPane.columnSpan="2" GridPane.halignment="CENTER">
+            <Text fx:id="DetailedItemTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Item Title" GridPane.columnSpan="2" GridPane.halignment="CENTER">
                <font>
                   <Font size="34.0" />
                </font>
@@ -31,8 +31,8 @@
                   <Insets left="20.0" />
                </GridPane.margin>
             </Text>
-            <ImageView fitHeight="300.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Item Information:" GridPane.rowIndex="2" GridPane.valignment="TOP">
+            <ImageView fx:id="DetailedItemImage" fitHeight="300.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <Text fx:id="ItemInformationText" strokeType="OUTSIDE" strokeWidth="0.0" text="Item Information:" GridPane.rowIndex="2" GridPane.valignment="TOP">
                <font>
                   <Font size="24.0" />
                </font>
@@ -40,7 +40,7 @@
                   <Insets left="20.0" top="20.0" />
                </GridPane.margin>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Brand:" GridPane.rowIndex="2" GridPane.valignment="TOP">
+            <Text fx:id="BrandText" strokeType="OUTSIDE" strokeWidth="0.0" text="Brand:" GridPane.rowIndex="2" GridPane.valignment="TOP">
                <GridPane.margin>
                   <Insets left="30.0" top="70.0" />
                </GridPane.margin>
@@ -48,7 +48,7 @@
                   <Font size="20.0" />
                </font>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Diet Classification: " GridPane.rowIndex="2" GridPane.valignment="TOP">
+            <Text fx:id="DietClassificationText" strokeType="OUTSIDE" strokeWidth="0.0" text="Diet Classification: " GridPane.rowIndex="2" GridPane.valignment="TOP">
                <font>
                   <Font size="20.0" />
                </font>
@@ -56,7 +56,7 @@
                   <Insets left="30.0" top="100.0" />
                </GridPane.margin>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Weight:" GridPane.rowIndex="2" GridPane.valignment="TOP">
+            <Text fx:id="WegihtText" strokeType="OUTSIDE" strokeWidth="0.0" text="Weight:" GridPane.rowIndex="2" GridPane.valignment="TOP">
                <font>
                   <Font size="20.0" />
                </font>
@@ -64,7 +64,7 @@
                   <Insets left="30.0" top="130.0" />
                </GridPane.margin>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Total Calories:" GridPane.rowIndex="2" GridPane.valignment="TOP">
+            <Text fx:id="TotalCaloriesText" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Calories:" GridPane.rowIndex="2" GridPane.valignment="TOP">
                <font>
                   <Font size="20.0" />
                </font>
