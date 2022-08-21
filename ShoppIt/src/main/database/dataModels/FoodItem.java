@@ -14,18 +14,21 @@ public class FoodItem {
     private String imgFilename;
     @Column(name = "brand")
     private String brand;
+    @Column(name = "price")
+    private String price;
     @Column(name = "diet_classification")
     private String dietClassification;
     @Column(name = "weight")
-    private int weight;
+    private String weight;
     @Column(name = "total_calories")
     private int totalCalories;
 
 
-    public FoodItem(String productName, String imgFilename, String brand, String dietClassification, int weight, int totalCalories) {
+    public FoodItem(String productName, String imgFilename, String brand, String price, String dietClassification, String weight, int totalCalories) {
         this.productName = productName;
         this.imgFilename = imgFilename;
         this.brand = brand;
+        this.price = price;
         this.dietClassification = dietClassification;
         this.weight = weight;
         this.totalCalories = totalCalories;
@@ -43,14 +46,15 @@ public class FoodItem {
         return brand;
     }
 
+    public String getPrice() {
+        return price;
+    }
+
     public String getDietClassification() {
         return dietClassification;
     }
 
-    /**
-     * @return weight in grams
-     */
-    public int getWeight() {
+    public String getWeight() {
         return weight;
     }
 
