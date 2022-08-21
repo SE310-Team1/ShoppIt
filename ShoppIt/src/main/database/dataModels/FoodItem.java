@@ -34,6 +34,9 @@ public class FoodItem {
         this.totalCalories = totalCalories;
     }
 
+    public FoodItem() {
+    }
+
     public String getProductName() {
         return productName;
     }
