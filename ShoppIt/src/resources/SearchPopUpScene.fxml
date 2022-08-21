@@ -24,12 +24,12 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <TextField prefHeight="40.0" prefWidth="500.0" style="-fx-background-radius: 5;" GridPane.columnSpan="2" GridPane.valignment="TOP">
+            <TextField fx:id="searchTextField" prefHeight="40.0" prefWidth="500.0" style="-fx-background-radius: 5;" GridPane.columnSpan="2" GridPane.valignment="TOP">
                <GridPane.margin>
                   <Insets left="20.0" right="100.0" top="20.0" />
                </GridPane.margin>
             </TextField>
-            <Button mnemonicParsing="false" style="-fx-background-radius: 5;" text="Search" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="TOP">
+            <Button fx:id="searchButton" mnemonicParsing="false" style="-fx-background-radius: 5;" text="Search" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="TOP">
                <GridPane.margin>
                   <Insets right="20.0" top="22.5" />
                </GridPane.margin>
@@ -37,7 +37,7 @@
                   <Font size="16.0" />
                </font>
             </Button>
-            <ListView prefHeight="200.0" prefWidth="200.0" style="-fx-background-radius: 5;" GridPane.columnSpan="2" GridPane.rowIndex="1" GridPane.rowSpan="2">
+            <ListView fx:id="searchResultsTable" prefHeight="200.0" prefWidth="200.0" style="-fx-background-radius: 5;" GridPane.columnSpan="2" GridPane.rowIndex="1" GridPane.rowSpan="2">
                <GridPane.margin>
                   <Insets bottom="20.0" left="20.0" right="20.0" />
                </GridPane.margin>
