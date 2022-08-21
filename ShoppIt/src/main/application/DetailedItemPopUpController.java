@@ -7,7 +7,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class DetailedItemPopUpController {
+public class DetailedItemPopUpController{
 	
 	@FXML
 	private Text detailedItemTitle;
