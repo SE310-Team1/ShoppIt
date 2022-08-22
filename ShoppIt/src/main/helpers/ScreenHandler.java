@@ -27,7 +27,8 @@ public class ScreenHandler {
 	// changes screen to other screen
 	public static void changeTo(String name){
 		try {
-			Parent pane = FXMLLoader.load(ScreenHandler.class.getResource("/resources/fxml/" + nameMap.get(name)));
+			HashMap<String,String> tempMap = nameMap;
+			Parent pane = FXMLLoader.load(ScreenHandler.class.getResource("/fxml/" + nameMap.get(name)));
 			currentScreen = pane;
 			main.setRoot( pane );
 		} catch (IOException e) {
