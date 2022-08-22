@@ -23,10 +23,12 @@ public class MainController implements Initializable {
     @FXML
     private ListView<String> MainListView;
 
+    List<List<Item>> lists = new LinkedList<>();
+
+    // Set up lists in main scene
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         DatabaseManager DB = new DatabaseManager();
-        List<List<Item>> lists = new LinkedList<>();
         lists = DB.getItems();
 
         for(int i = 1; i < lists.size(); i++) {
@@ -43,7 +45,6 @@ public class MainController implements Initializable {
 
     public void newList(ActionEvent e) {
         ScreenHandler.changeTo("newListScene");
-
     }
 
 }
