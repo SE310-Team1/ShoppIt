@@ -1,7 +1,8 @@
-package application;
+package helpers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
@@ -20,15 +21,15 @@ public class DetailedItemPopUpController{
 	@FXML
 	private Text detailedItemDietClassifcation;
 	@FXML
-	private Text detailedWeight;
+	private Text detailedItemWeight;
 	@FXML
-	private Text detailedTotalCalories;
+	private Text detailedItemTotalCalories;
 	@FXML
-	private Text detailedAddButton;
+	private Button detailedItemAddButton;
 	@FXML
-	private Text detailedExitButton;
+	private Button detailedItemExitButton;
 	@FXML
-	private GridPane detailedGridPane;
+	private GridPane detailedItemGridPane;
 	
 	private Stage stage;
 	
@@ -39,7 +40,7 @@ public class DetailedItemPopUpController{
 	
 	//Method that controls exit button - closes the popup
 	public void exitPopUp(ActionEvent event) {
-		stage = (Stage) detailedGridPane.getScene().getWindow();
+		stage = (Stage) detailedItemGridPane.getScene().getWindow();
 		stage.close();
 		
 	}
