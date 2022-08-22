@@ -39,8 +39,7 @@ public class Main extends Application {
 		ScreenHandler.add("main", "Main.fxml");
 		ScreenHandler.add("individualListScene", "IndividualListScene.fxml");
 		ScreenHandler.add("newListScene", "NewListScene.fxml");
-		ScreenHandler.add("detailedItemScene", "DetailedItemPopUpSceneWithAdd.fxml");
-		ScreenHandler.changeTo("detailedItemScene"); // starting screen
+		ScreenHandler.changeTo("main"); // starting screen
 	}
 
 	public static void main(String[] args) {
