@@ -11,6 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.GridPane;
 
 public class SearchPopUpController implements Initializable {
 	
@@ -20,13 +21,16 @@ public class SearchPopUpController implements Initializable {
 	Button searchButton;
 	@FXML
 	ListView<String> searchResultsList;
+	@FXML
+	GridPane searchGridPane;
 	
 	List<String> foodItemNames;
 	
 	public void search(ActionEvent event) {
-		String query = searchTextField.getText();
+		/*String query = searchTextField.getText();
 		List<String> filteredList = searchList(query,foodItemNames);
-		searchResultsList.getItems().addAll(filteredList);
+		searchResultsList.getItems().addAll(filteredList);*/
+		searchTextField.setText("Hello");
 	}
 	
 	public List<String> searchList(String query, List<String> listOfStrings) {
@@ -46,7 +50,7 @@ public class SearchPopUpController implements Initializable {
 		
 		//TO-DO: Need code to get all the food items from database and put in foodItems list.
 		//Do this once retrieval method is implemented. 
-		searchResultsList.getItems().addAll(foodItemNames);
+		//searchResultsList.getItems().addAll(foodItemNames);
 		
 	}
 	
