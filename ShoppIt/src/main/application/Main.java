@@ -1,12 +1,8 @@
 package application;
 
-import database.DatabaseManager;
-import database.dataModels.FoodItem;
 import helpers.ScreenHandler;
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
-import java.util.ArrayList;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
