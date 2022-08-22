@@ -1,7 +1,11 @@
 package helpers;
 
+import java.net.URL;
+import java.util.ResourceBundle;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
@@ -34,6 +38,7 @@ public class DetailedItemPopUpController{
 	private Stage stage;
 	
 	
+	
 	public void addToList(ActionEvent event) {
 		
 	}
@@ -42,8 +47,10 @@ public class DetailedItemPopUpController{
 	public void exitPopUp(ActionEvent event) {
 		stage = (Stage) detailedItemGridPane.getScene().getWindow();
 		stage.close();
-		
 	}
 	
+	public void setDetailedItemTitle(String title) {
+		detailedItemTitle.setText(title);
+	}
 
 }
