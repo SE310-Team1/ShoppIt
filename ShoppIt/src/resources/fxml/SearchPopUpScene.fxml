@@ -36,7 +36,7 @@
                   <Font size="16.0" />
                </font>
             </Button>
-            <ListView fx:id="searchResultsTable" prefHeight="200.0" prefWidth="200.0" style="-fx-background-radius: 5;" GridPane.columnSpan="2" GridPane.rowIndex="1" GridPane.rowSpan="2">
+            <ListView fx:id="searchResultsList" prefHeight="200.0" prefWidth="200.0" style="-fx-background-radius: 5;" GridPane.columnSpan="2" GridPane.rowIndex="1" GridPane.rowSpan="2">
                <GridPane.margin>
                   <Insets bottom="20.0" left="20.0" right="20.0" />
                </GridPane.margin>
