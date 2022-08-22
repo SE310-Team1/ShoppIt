@@ -76,4 +76,10 @@ public class DatabaseManager {
         return lists;
     }
 
+    public void deleteObject(Object o) {
+        Transaction tx = session.beginTransaction();
+        session.remove(o);
+        tx.commit();
+    }
+
 }
