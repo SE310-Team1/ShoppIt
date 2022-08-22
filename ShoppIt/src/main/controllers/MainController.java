@@ -31,16 +31,16 @@ public class MainController implements Initializable {
         DatabaseManager DB = new DatabaseManager();
         lists = DB.getItems();
 
-        for(int i = 1; i < lists.size(); i++) {
-            MainListView.getItems().add("List"+i);
+        for (int i = 0; i < lists.size(); i++) {
+            MainListView.getItems().add("List" + Integer.toString(i + 1));
         }
 
         MainListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-			@Override
-			public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
-				ScreenHandler.changeTo("individualListScene");
-			}	
-		});
+            @Override
+            public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
+                ScreenHandler.changeTo("individualListScene");
+            }
+        });
     }
 
     public void newList(ActionEvent e) {

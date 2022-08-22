@@ -54,6 +54,10 @@ public class DatabaseManager {
         return list;
     }
 
+    public <T> List<T> getAllFromDataBase(Class<T> targetClass) {
+        return getFromDataBase(targetClass, "FROM ".concat(targetClass.getSimpleName()));
+    }
+
 
     /**
      * For this method to function correctly all items must have a list ID corresponding to a list
