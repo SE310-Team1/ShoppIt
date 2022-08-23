@@ -10,7 +10,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import java.util.List;
-import database.models.FoodItem;
+import database.models.Item;
 
 /*
  * Controller for the display individual list page
@@ -18,7 +18,7 @@ import database.models.FoodItem;
 public class IndividualListSceneController {
 	
 	InfoStore store = InfoStore.getInstance();
-	List<FoodItem> itemList;
+	List<Item> itemList;
 
 	// @FXML private Button gamesModuleButton = new Button();
 	// @FXML private Button quitButton = new Button();
