@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="helpers.DetailedItemPopUpController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DetailedItemPopUpController">
    <center>
       <GridPane fx:id="detailedItemGridPane" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -37,7 +37,7 @@
                   <Font size="24.0" />
                </font>
                <GridPane.margin>
-                  <Insets left="20.0" top="20.0" />
+                  <Insets left="20.0" top="10.0" />
                </GridPane.margin>
             </Text>
             <Text fx:id="detailedItemBrand" strokeType="OUTSIDE" strokeWidth="0.0" text="Brand:" GridPane.rowIndex="2" GridPane.valignment="TOP">
@@ -82,6 +82,14 @@
                   <Insets bottom="20.0" right="20.0" />
                </GridPane.margin>
             </Button>
+            <Text fx:id="detailedItemPrice" strokeType="OUTSIDE" strokeWidth="0.0" text="Price: " GridPane.rowIndex="2" GridPane.valignment="TOP">
+               <GridPane.margin>
+                  <Insets left="30.0" top="40.0" />
+               </GridPane.margin>
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
          </children>
       </GridPane>
    </center>

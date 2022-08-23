@@ -37,7 +37,7 @@ public class DatabaseManager {
      * @param <T>
      * @return
      */
-    public <T> List<T> getFromDataBase(Class<T> targetClass, String HQLQuery) {
+    public <T> List<T> getFromDatabase(Class<T> targetClass, String HQLQuery) {
         Transaction tx = null;
         List<T> list;
         try {
@@ -55,7 +55,7 @@ public class DatabaseManager {
     }
 
     public <T> List<T> getAllFromDataBase(Class<T> targetClass) {
-        return getFromDataBase(targetClass, "FROM ".concat(targetClass.getSimpleName()));
+        return getFromDatabase(targetClass, "FROM ".concat(targetClass.getSimpleName()));
     }
 
 
@@ -65,7 +65,7 @@ public class DatabaseManager {
      * @return
      */
     public List<List<Item>> getItems() {
-        List<Item> items = getFromDataBase(Item.class, "FROM Item i ORDER BY i.listId");
+        List<Item> items = getFromDatabase(Item.class, "FROM Item i ORDER BY i.listId");
 
         List<List<Item>> lists = new LinkedList<>();
         int listCount = 0;
