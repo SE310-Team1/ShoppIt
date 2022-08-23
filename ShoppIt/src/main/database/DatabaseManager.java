@@ -55,7 +55,7 @@ public class DatabaseManager {
     }
 
     public <T> List<T> getAllFromDataBase(Class<T> targetClass) {
-        return getFromDataBase(targetClass, "FROM ".concat(targetClass.getSimpleName()));
+        return getFromDatabase(targetClass, "FROM ".concat(targetClass.getSimpleName()));
     }
 
 
