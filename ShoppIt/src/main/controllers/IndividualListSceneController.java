@@ -1,5 +1,6 @@
 package controllers;
 
+import helpers.DisplayFoodItems;
 import helpers.InfoStore;
 import helpers.ScreenHandler;
 import javafx.application.Platform;
@@ -8,7 +9,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
+
+import java.util.ArrayList;
 import java.util.List;
 import database.models.FoodItem;
 import database.models.Item;
@@ -17,6 +21,9 @@ import database.models.Item;
  * Controller for the display individual list page
  */
 public class IndividualListSceneController {
+
+	@FXML
+    private ListView<String> ItemListView;
 	
 	InfoStore store = InfoStore.getInstance();
 	List<Item> itemList;
@@ -35,6 +42,10 @@ public class IndividualListSceneController {
 	@FXML
 	public void initialize() {
 		itemList = store.getList();
+
+		List<String> foodNames = new ArrayList<String>();
+		foodNames = DisplayFoodItems.ListFoodItems(itemList);
+		ItemListView.getItems().addAll(foodNames);
 		// load stuff into labels
 		// individualListSceneTitle.setText("HI");
 		// individualListSceneDescription.setText("HI");
