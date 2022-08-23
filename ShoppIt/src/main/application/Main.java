@@ -36,7 +36,7 @@ public class Main extends Application {
 		ScreenHandler.add("individualListScene", "IndividualListScene.fxml");
 		ScreenHandler.add("newListScene", "NewListScene.fxml");
 		ScreenHandler.add("searchScene", "SearchPopUpScene.fxml");
-		ScreenHandler.changeTo("searchScene"); // starting screen
+		ScreenHandler.changeTo("main"); // starting screen
 	}
 
 	public static void main(String[] args) {
