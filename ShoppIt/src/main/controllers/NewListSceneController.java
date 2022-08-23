@@ -28,7 +28,7 @@ public class NewListSceneController {
 
 	// Runs when an item is pressed
 	public void activateItemPopup(ActionEvent e) {
-		// ScreenHandler.changeTo("gameTopic");
+		 ScreenHandler.changeTo("searchScene");
 	}
 
 	// Runs when the search button is pressed

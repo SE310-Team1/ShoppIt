@@ -84,6 +84,8 @@ public class SearchPopUpController implements Initializable {
 					detailedItemPopUpController.setDetailedItemWeight("Weight: " + currentItem.getWeight());
 					detailedItemPopUpController.setDetailedItemTotalCalories("Total Calories: " + Integer.toString(currentItem.getTotalCalories()));
 					
+					detailedItemPopUpController.setItem(currentItem);
+					
 					scene = new Scene(root);
 					stage = new Stage();
 					stage.setResizable(false);
