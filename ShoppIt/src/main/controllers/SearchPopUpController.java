@@ -28,6 +28,8 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+
+//Class that controls the actions of the SearchPopUpScene 
 public class SearchPopUpController implements Initializable {
 	
 	@FXML
@@ -51,18 +53,14 @@ public class SearchPopUpController implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		
-		//TO-DO: Need code to get all the food items from database and put in foodItems list.
-		//Do this once retrieval method is implemented.
-		
-		
+		//Retrieves all food items for the database 
 		DatabaseManager databaseManager = new DatabaseManager();
 		List<FoodItem> foodItemObjects = databaseManager.getFromDatabase(FoodItem.class,"FROM FoodItem");
 		for(FoodItem item : foodItemObjects) {
+			//Puts foodItem and its corresponding product name in a hashmap. Name required to populate search results list.
 			foodItems.put(item, item.getProductName());
 		}
 		
-		//Current foodItemNames for testing, will be replaced with list retrieved from database.
-//		foodItemNames = Arrays.asList("Orange", "Apple", "Pineapple");
 		searchResultsList.getItems().addAll(foodItems.values());
 		
 		searchResultsList.getSelectionModel().selectedItemProperty().addListener( (ChangeListener<? super String>) new ChangeListener<Object>() {
@@ -75,6 +73,7 @@ public class SearchPopUpController implements Initializable {
 					loader = new FXMLLoader(getClass().getResource("/fxml/DetailedItemPopUpSceneWithAdd.fxml"));
 					root = (Parent) loader.load();
 					
+					//Sets values in detailed item scene
 					DetailedItemPopUpController detailedItemPopUpController = loader.getController();
 					detailedItemPopUpController.setDetailedItemTitle(currentItem.getProductName());
 					detailedItemPopUpController.setDetailedItemImage(new Image("/images/" + currentItem.getImgFilename()));
