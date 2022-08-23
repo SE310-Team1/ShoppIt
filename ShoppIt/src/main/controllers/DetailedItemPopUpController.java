@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import database.models.FoodItem;
+import database.models.Item;
 import helpers.InfoStore;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -49,7 +50,7 @@ public class DetailedItemPopUpController{
 	//Adds item to current new list. Closes item pop up afterwards.
 	public void addToList(ActionEvent event) {
 		InfoStore infoStore = InfoStore.getInstance();
-		infoStore.setItem(item);
+		Item currentItem = new Item(1,item.getId());
 		
 		stage = (Stage) detailedItemGridPane.getScene().getWindow();
 		stage.close();
