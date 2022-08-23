@@ -3,12 +3,15 @@ package helpers;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map.Entry;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 import database.DatabaseManager;
-import database.dataModels.FoodItem;
+import database.models.FoodItem;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -20,6 +23,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -35,7 +39,8 @@ public class SearchPopUpController implements Initializable {
 	@FXML
 	GridPane searchGridPane;
 	
-	List<String> foodItemNames;
+	List<FoodItem> foodItemObjects = new ArrayList<>();
+	HashMap<FoodItem,String> foodItems = new HashMap<>();
 	
 	private Stage stage;
 	private Scene scene;
@@ -50,26 +55,34 @@ public class SearchPopUpController implements Initializable {
 		//Do this once retrieval method is implemented.
 		
 		
-		/*DatabaseManager databaseManager = new DatabaseManager();
-		//List<FoodItem> foodItems = databaseManager.getFoodItems();
-		//for(FoodItem foodItem : foodItems) {
-			//foodItemNames.add(foodItem.getProductName());
-		}*/
+		DatabaseManager databaseManager = new DatabaseManager();
+		List<FoodItem> foodItemObjects = databaseManager.getFromDatabase(FoodItem.class,"FROM FoodItem");
+		for(FoodItem item : foodItemObjects) {
+			foodItems.put(item, item.getProductName());
+		}
 		
 		//Current foodItemNames for testing, will be replaced with list retrieved from database.
-		foodItemNames = Arrays.asList("Orange", "Apple", "Pineapple");
-		searchResultsList.getItems().addAll(foodItemNames);
+//		foodItemNames = Arrays.asList("Orange", "Apple", "Pineapple");
+		searchResultsList.getItems().addAll(foodItems.values());
 		
 		searchResultsList.getSelectionModel().selectedItemProperty().addListener( (ChangeListener<? super String>) new ChangeListener<Object>() {
 
 			@Override
 			public void changed(ObservableValue<?> arg0, Object arg1, Object arg2) {
 				try {
+					FoodItem currentItem = getItemKeyByValue(arg2.toString());
+					
 					loader = new FXMLLoader(getClass().getResource("/fxml/DetailedItemPopUpSceneWithAdd.fxml"));
 					root = (Parent) loader.load();
 					
 					DetailedItemPopUpController detailedItemPopUpController = loader.getController();
-					detailedItemPopUpController.setDetailedItemTitle(arg2.toString());
+					detailedItemPopUpController.setDetailedItemTitle(currentItem.getProductName());
+					detailedItemPopUpController.setDetailedItemImage(new Image("/images/" + currentItem.getImgFilename()));
+					detailedItemPopUpController.setDetailedItemPrice("Price: " + currentItem.getPrice());
+					detailedItemPopUpController.setDetailedItemBrand("Brand: " + currentItem.getBrand());
+					detailedItemPopUpController.setDetailedItemDietClassification("Diet Classification: " + currentItem.getDietClassification());
+					detailedItemPopUpController.setDetailedItemWeight("Weight: " + currentItem.getWeight());
+					detailedItemPopUpController.setDetailedItemTotalCalories("Total Calories: " + Integer.toString(currentItem.getTotalCalories()));
 					
 					scene = new Scene(root);
 					stage = new Stage();
@@ -96,25 +109,34 @@ public class SearchPopUpController implements Initializable {
 		
 		//Checks if query input is null, if so return all items in the list.
 		if(query.equals(" ")) {
-			searchResultsList.getItems().addAll(foodItemNames);
+			searchResultsList.getItems().addAll(foodItems.values());
 		} else {
-		List<String> filteredList = searchList(query,foodItemNames);
+		List<String> filteredList = searchList(query,foodItems.values());
 		searchResultsList.getItems().addAll(filteredList);
 		}
 	}
 	
 	//Method to return a list of all items that matches the user's query
-	public List<String> searchList(String query, List<String> listOfStrings) {
+	public List<String> searchList(String query, Collection<String> listOfStrings) {
 		List<String> filteredList = new ArrayList<>();
 		
-		for(String item: listOfStrings) {
+		for(String itemName: listOfStrings) {
 			//Sets both item and query to lowercase to avoid case issues when matching.
-			if(item.toLowerCase().contains(query.toLowerCase())) {
-				filteredList.add(item);
+			if(itemName.toLowerCase().contains(query.toLowerCase())) {
+				filteredList.add(itemName);
 			}
 		}
 		
 		return filteredList;
+	}
+	
+	public FoodItem getItemKeyByValue(String value) {
+		for(Entry<FoodItem,String> entry : foodItems.entrySet()) {
+			if (Objects.equals(value, entry.getValue())) {
+	            return entry.getKey();
+	        }
+		}
+		return null;
 	}
 
 

@@ -3,10 +3,12 @@ package helpers;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import database.models.FoodItem;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
@@ -23,7 +25,9 @@ public class DetailedItemPopUpController{
 	@FXML
 	private Text detailedItemBrand;
 	@FXML
-	private Text detailedItemDietClassifcation;
+	private Text detailedItemPrice;
+	@FXML
+	private Text detailedItemDietClassification;
 	@FXML
 	private Text detailedItemWeight;
 	@FXML
@@ -37,6 +41,8 @@ public class DetailedItemPopUpController{
 	
 	private Stage stage;
 	
+	private FoodItem item = new FoodItem();
+	
 	
 	
 	public void addToList(ActionEvent event) {
@@ -49,8 +55,34 @@ public class DetailedItemPopUpController{
 		stage.close();
 	}
 	
+	
 	public void setDetailedItemTitle(String title) {
 		detailedItemTitle.setText(title);
 	}
+	
+	public void setDetailedItemImage(Image image) {
+		detailedItemImage.setImage(image);
+	}
+	
+	public void setDetailedItemPrice(String price) {
+		detailedItemPrice.setText(price);
+	}
+	
+	public void setDetailedItemBrand(String brand) {
+		detailedItemBrand.setText(brand);
+	}
+	
+	public void setDetailedItemDietClassification(String dietClassification) {
+		detailedItemDietClassification.setText(dietClassification);
+	}
+	
+	public void setDetailedItemWeight(String weight) {
+		detailedItemWeight.setText(weight);
+	}
+	
+	public void setDetailedItemTotalCalories(String totalCalories) {
+		detailedItemTotalCalories.setText(totalCalories);
+	}
+	
 
 }
