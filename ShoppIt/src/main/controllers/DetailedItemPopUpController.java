@@ -4,6 +4,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import database.models.FoodItem;
+import database.models.Item;
+import helpers.InfoStore;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -14,6 +16,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+//Class that controls the actions of the DetailedItemPopUpScene and DetailedItemPopUpSceneWithAdd 
 public class DetailedItemPopUpController{
 	
 	@FXML
@@ -44,9 +47,13 @@ public class DetailedItemPopUpController{
 	private FoodItem item = new FoodItem();
 	
 	
-	
+	//Adds item to current new list. Closes item pop up afterwards.
 	public void addToList(ActionEvent event) {
+		InfoStore infoStore = InfoStore.getInstance();
+		Item currentItem = new Item(1,item.getId());
 		
+		stage = (Stage) detailedItemGridPane.getScene().getWindow();
+		stage.close();
 	}
 	
 	//Method that controls exit button - closes the popup
@@ -82,6 +89,10 @@ public class DetailedItemPopUpController{
 	
 	public void setDetailedItemTotalCalories(String totalCalories) {
 		detailedItemTotalCalories.setText(totalCalories);
+	}
+	
+	public void setItem(FoodItem item) {
+		this.item = item;
 	}
 	
 

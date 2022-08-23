@@ -11,6 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import java.util.List;
 import database.models.FoodItem;
+import database.models.Item;
 
 /*
  * Controller for the new/edit list page
@@ -18,7 +19,7 @@ import database.models.FoodItem;
 public class NewListSceneController {
 
 	InfoStore store = InfoStore.getInstance();
-	List<FoodItem> itemList = store.getList();
+	List<Item> itemList = store.getList();
 
 	// @FXML private Button gamesModuleButton = new Button();
 	// @FXML private Button quitButton = new Button();
@@ -28,7 +29,7 @@ public class NewListSceneController {
 
 	// Runs when an item is pressed
 	public void activateItemPopup(ActionEvent e) {
-		// ScreenHandler.changeTo("gameTopic");
+		 ScreenHandler.changeTo("searchScene");
 	}
 
 	// Runs when the search button is pressed

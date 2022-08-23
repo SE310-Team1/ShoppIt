@@ -23,6 +23,11 @@ public class Item {
         this.itemId = itemId;
         this.listId = listId;
     }
+    
+    public Item(int quantity, int itemId) {
+        this.quantity = quantity;
+        this.itemId = itemId;
+    }
 
     private int getId() {
         return id;
