@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 import database.models.FoodItem;
 import database.models.Item;
 import helpers.InfoStore;
+import helpers.ScreenHandler;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -54,6 +55,7 @@ public class DetailedItemPopUpController{
 		
 		stage = (Stage) detailedItemGridPane.getScene().getWindow();
 		stage.close();
+		ScreenHandler.changeTo("newListScene");
 	}
 	
 	//Method that controls exit button - closes the popup
