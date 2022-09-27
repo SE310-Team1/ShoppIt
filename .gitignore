@@ -1,2 +1,6 @@
 /.metadata/
 derby.log
+*.xml
+*.lck
+*.dat
+*.iml
