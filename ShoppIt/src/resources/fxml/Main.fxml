@@ -29,7 +29,7 @@
                </font>
             </Text>
             <ListView fx:id="MainListView" editable="true" fixedCellSize="160.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.rowSpan="2" GridPane.valignment="CENTER" />
-            <Button fx:id="AddListButton" mnemonicParsing="false" onAction="#newList" text="Add List Button" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+            <Button fx:id="AddListButton" mnemonicParsing="false" onAction="#newList" text="Create New List" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
          </children>
       </GridPane>
    </center>

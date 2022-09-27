@@ -12,6 +12,7 @@ import java.util.ResourceBundle;
 
 import database.DatabaseManager;
 import database.models.FoodItem;
+import helpers.ScreenHandler;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -141,6 +142,8 @@ public class SearchPopUpController implements Initializable {
 	}
 
 
-	
+	public void buttonBack(ActionEvent e) {
+		ScreenHandler.changeTo("newListScene");
+	}
 
 }

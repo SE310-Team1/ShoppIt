@@ -47,7 +47,7 @@
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button fx:id="saveButton" mnemonicParsing="false" onAction="#buttonSubmit" text="Save" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+            <Button fx:id="saveButton" mnemonicParsing="false" onAction="#buttonSubmit" text="Save List" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
                <font>
                   <Font size="20.0" />
                </font>
@@ -65,6 +65,9 @@
                <font>
                   <Font size="20.0" />
                </font>
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
             </Button>
             <ListView fx:id="newListListView" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
          </children>
