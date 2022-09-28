@@ -57,10 +57,15 @@ public class SearchPopUpController implements Initializable {
 		DatabaseManager databaseManager = new DatabaseManager();
 		List<FoodItem> foodItemObjects = databaseManager.getFromDatabase(FoodItem.class,"FROM FoodItem");
 		for(FoodItem item : foodItemObjects) {
+
+
 			//Puts foodItem and its corresponding product name in a hashmap. Name required to populate search results list.
 			foodItems.put(item, item.getProductName());
+
 		}
-		
+
+
+
 		searchResultsList.getItems().addAll(foodItems.values());
 		
 		searchResultsList.getSelectionModel().selectedItemProperty().addListener( (ChangeListener<? super String>) new ChangeListener<Object>() {
