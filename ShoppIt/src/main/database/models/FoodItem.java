@@ -8,7 +8,7 @@ public class FoodItem {
     @Id
     @GeneratedValue
     private int id;
-    @Column(name = "product_name")
+    @Column(name = "product_name", unique = true)
     private String productName;
     @Column(name = "image_filename")
     private String imgFilename;
@@ -67,6 +67,10 @@ public class FoodItem {
 
     public int getId() {
         return id;
+    }
+
+    public void setImgFilename(String imgFilename) {
+        this.imgFilename = imgFilename;
     }
 }
 
