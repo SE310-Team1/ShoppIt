@@ -80,14 +80,10 @@ public class DatabaseManager {
         return lists;
     }
 
-    public void updateImage(String foodName, String update) {
-        List<FoodItem> foodItemObjects = session.createQuery("select f FROM FoodItem f", FoodItem.class).list();
-        for (FoodItem item : foodItemObjects) {
-            String name = item.getProductName();
-            if (name.equals(foodName)) {
-                item.setImgFilename(update);
-                session.merge(item);
-            }
-        }
+    public void deleteObject(Object o) {
+        Transaction tx = session.beginTransaction();
+        session.remove(o);
+        tx.commit();
     }
+
 }
