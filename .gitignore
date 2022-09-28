@@ -1,5 +1,9 @@
 /.metadata/
 derby.log
+*.xml
+*.lck
+*.dat
+*.iml
 .idea/compiler.xml
 .idea/encodings.xml
 .idea/jarRepositories.xml
@@ -87,8 +91,6 @@ ShoppIt/derbyDatabase/seg0/c101.dat
 ShoppIt/derbyDatabase/log/logmirror.ctrl
 ShoppIt/derbyDatabase/log/log1.dat
 ShoppIt/derbyDatabase/log/log.ctrl
-*.dat
-*.dat
 ShoppIt/derbyDatabase/seg0/cf0.dat
 ShoppIt/derbyDatabase/seg0/cb1.dat
 ShoppIt/derbyDatabase/seg0/ca1.dat
