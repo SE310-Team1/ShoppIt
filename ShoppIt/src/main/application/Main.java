@@ -14,15 +14,14 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 
 		try {
-			Scene scene = new Scene(new Pane(), 800, 600);
+			Scene scene = new Scene(new Pane());
 			scene.getStylesheets().add(getClass().getResource("/css/application.css").toExternalForm());
-			// scene.getStylesheets().add("https://fonts.googleapis.com/css2?family=Fredoka+One");
-
 			setScreens(scene);
-
-			// primaryStage.setResizable(false);
+			
 			primaryStage.setTitle("ShoppIt");
 			primaryStage.setScene(scene);
+			primaryStage.setMinHeight(700);
+			primaryStage.setMinWidth(800);
 			primaryStage.show();
 
 		} catch (Exception e) {
