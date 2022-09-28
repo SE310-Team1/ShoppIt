@@ -4,50 +4,40 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SearchPopUpController">
-   <center>
-      <GridPane fx:id="searchGridPane" BorderPane.alignment="CENTER">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="209.0" minHeight="10.0" prefHeight="209.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="287.0" minHeight="10.0" prefHeight="205.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="112.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
-        </rowConstraints>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SearchPopUpController">
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+   <children>
+      <VBox alignment="TOP_CENTER" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <TextField fx:id="searchTextField" prefHeight="40.0" prefWidth="500.0" style="-fx-background-radius: 5;" GridPane.columnSpan="2" GridPane.valignment="TOP">
-               <GridPane.margin>
-                  <Insets left="20.0" right="100.0" top="20.0" />
-               </GridPane.margin>
-            </TextField>
-            <Button fx:id="searchButton" mnemonicParsing="false" onAction="#search" style="-fx-background-radius: 5;" text="Search" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="TOP">
-               <GridPane.margin>
-                  <Insets right="20.0" top="22.5" />
-               </GridPane.margin>
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Button>
-            <ListView fx:id="searchResultsList" prefHeight="200.0" prefWidth="200.0" style="-fx-background-radius: 5;" GridPane.columnSpan="2" GridPane.rowIndex="1" GridPane.rowSpan="2">
-               <GridPane.margin>
-                  <Insets bottom="20.0" left="20.0" right="20.0" />
-               </GridPane.margin>
-            </ListView>
-            <Button mnemonicParsing="false" onAction="#buttonBack" text="Back" GridPane.rowIndex="3">
-               <GridPane.margin>
-                  <Insets left="20.0" />
-               </GridPane.margin>
-            </Button>
+            <AnchorPane>
+               <children>
+                  <Button mnemonicParsing="false" onAction="#buttonBack" prefHeight="43.0" prefWidth="70.0" text="Back" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Text layoutX="323.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Item" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane>
+               <children>
+                  <TextField fx:id="searchTextField" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="580.0" style="-fx-background-radius: 5;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Button fx:id="searchButton" mnemonicParsing="false" onAction="#search" prefHeight="40.0" prefWidth="150.0" style="-fx-background-radius: 5;" text="Search" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <ListView fx:id="searchResultsList" style="-fx-background-radius: 5;" />
          </children>
-      </GridPane>
-   </center>
-</BorderPane>
+      </VBox>
+   </children>
+</AnchorPane>
