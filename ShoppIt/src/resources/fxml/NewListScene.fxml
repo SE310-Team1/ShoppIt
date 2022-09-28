@@ -76,7 +76,7 @@
                         <Font size="20.0" />
                      </font>
                   </Button>
-                  <Button fx:id="saveButton" alignment="CENTER" mnemonicParsing="false" onAction="#buttonSubmit" prefWidth="150.0" text="Save">
+                  <Button fx:id="saveButton" alignment="CENTER" mnemonicParsing="false" onAction="#buttonSubmit" prefWidth="150.0" text="Save List">
                      <font>
                         <Font size="20.0" />
                      </font>

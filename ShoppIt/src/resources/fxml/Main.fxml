@@ -28,7 +28,7 @@
             </VBox>
             <VBox alignment="CENTER" prefWidth="489.0">
                <children>
-                  <Button fx:id="AddListButton" alignment="CENTER" mnemonicParsing="false" onAction="#newList" text="Add List Button" />
+                  <Button fx:id="AddListButton" alignment="CENTER" mnemonicParsing="false" onAction="#newList" text="Create New List" />
                </children>
             </VBox>
         </items>
