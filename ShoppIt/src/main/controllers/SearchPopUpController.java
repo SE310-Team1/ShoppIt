@@ -55,7 +55,7 @@ public class SearchPopUpController implements Initializable {
 		
 		//Retrieves all food items for the database 
 		DatabaseManager databaseManager = new DatabaseManager();
-		// can remove these lines once the code is ran once as the databse is preserved afterwards
+		// can remove these lines once the code is ran once as the database is preserved afterwards
 		databaseManager.updateImage("Carrots","carrots.png");
 		databaseManager.updateImage("Spring Onion","spring_onions.jpg");
 		databaseManager.updateImage("Mushroom","mushrooms.png");
