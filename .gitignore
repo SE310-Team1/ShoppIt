@@ -113,3 +113,5 @@ ShoppIt/derbyDatabase/seg0/c101.dat
 ShoppIt/derbyDatabase/log/logmirror.ctrl
 ShoppIt/derbyDatabase/log/log1.dat
 ShoppIt/derbyDatabase/log/log.ctrl
+ShoppIt/derbyDatabase/.DS_Store
+ShoppIt/src/resources/.DS_Store

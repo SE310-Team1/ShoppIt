@@ -5,84 +5,109 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.NewListSceneController">
    <children>
-      <SplitPane dividerPositions="0.35, 0.85" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <SplitPane orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
       
-            <VBox alignment="CENTER">
+                              <VBox alignment="CENTER" style="-fx-background-color: EEEEEE;">
                <children>
-                  <TextField fx:id="NewListTitle" text="Title">
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Region prefHeight="200.0" prefWidth="200.0" />
+                        <ImageView fitHeight="150.0" fitWidth="200.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/fruit.png" />
+                           </image>
+                        </ImageView>
+                        <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                        <ImageView fx:id="titleText" fitHeight="66.0" fitWidth="261.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/new_list.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets top="20.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Region prefHeight="200.0" prefWidth="200.0" />
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/fruit.png" />
+                           </image>
+                        </ImageView>
+                        <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+                  <TextField fx:id="NewListTitle" prefHeight="49.0" prefWidth="698.0" style="-fx-border-color: #E13F18; -fx-border-width: 2; -fx-border-radius: 5; -fx-background-radius: 5;" text="Title">
                      <font>
-                        <Font size="34.0" />
-                     </font>
-                  </TextField>
-                  <TextField fx:id="NewListDescription" text="Description: ">
-                     <font>
-                        <Font size="16.0" />
+                        <Font name="Avenir Book" size="24.0" />
                      </font>
                      <VBox.margin>
-                        <Insets bottom="10.0" top="10.0" />
+                        <Insets left="50.0" right="50.0" top="20.0" />
                      </VBox.margin>
                   </TextField>
-                  <Button fx:id="AddItemButton" mnemonicParsing="false" onAction="#activateItemPopup" prefWidth="200.0" text="Add Item">
+                  <TextField fx:id="NewListDescription" alignment="TOP_LEFT" prefHeight="80.0" prefWidth="698.0" style="-fx-border-color: #FFA707; -fx-border-width: 2; -fx-background-radius: 5; -fx-border-radius: 5;" text="Description">
                      <font>
-                        <Font size="20.0" />
+                        <Font name="Avenir Book" size="16.0" />
                      </font>
                      <VBox.margin>
-                        <Insets top="20.0" />
+                        <Insets bottom="10.0" left="50.0" right="50.0" top="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Button fx:id="AddItemButton" mnemonicParsing="false" onAction="#activateItemPopup" prefWidth="1200.0" style="-fx-background-color: #359C55;" text="Add Item" textFill="WHITE">
+                     <font>
+                        <Font name="Avenir Next Bold" size="20.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="50.0" right="50.0" top="10.0" />
                      </VBox.margin>
                   </Button>
+                  <ListView fx:id="newListListView" style="-fx-background-radius: 5;">
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="50.0" right="50.0" top="20.0" />
+                     </VBox.margin>
+                  </ListView>
+                  <HBox alignment="CENTER" spacing="50.0">
+                     <children>
+                        <Button fx:id="saveButton1" alignment="CENTER" mnemonicParsing="false" onAction="#buttonBack" prefWidth="800.0" style="-fx-background-color: white; -fx-border-color: #359C55; -fx-background-radius: 5; -fx-border-radius: 5; -fx-border-width: 4;" text="Cancel" textFill="#359c55">
+                           <font>
+                              <Font name="Avenir Next Bold" size="20.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="16.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/cross.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="saveButton" alignment="CENTER" mnemonicParsing="false" onAction="#buttonSubmit" prefWidth="800.0" style="-fx-background-color: #359C55; -fx-border-color: #359C55; -fx-border-width: 4; -fx-background-radius: 5; -fx-border-radius: 5;" text="Save List" textFill="WHITE">
+                           <font>
+                              <Font name="Avenir Next Bold" size="20.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/check.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="30.0" left="50.0" right="50.0" />
+                     </VBox.margin>
+                  </HBox>
                </children>
-               <padding>
-                  <Insets left="50.0" right="50.0" />
-               </padding>
             </VBox>
-            <GridPane prefWidth="800.0">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" percentHeight="7.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" percentHeight="58.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-               <children>
-                  <ImageView fx:id="SuggestionImage_1" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="TOP">
-                     <GridPane.margin>
-                        <Insets />
-                     </GridPane.margin>
-                  </ImageView>
-                  <ImageView fx:id="SuggestionImage_2" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="TOP" />
-                  <ListView fx:id="newListListView" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-               </children>
-            </GridPane>
-            <HBox alignment="CENTER" spacing="100.0">
-               <children>
-                  <Button fx:id="saveButton1" alignment="CENTER" mnemonicParsing="false" onAction="#buttonBack" prefWidth="150.0" text="Cancel">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="saveButton" alignment="CENTER" mnemonicParsing="false" onAction="#buttonSubmit" prefWidth="150.0" text="Save List">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Button>
-               </children>
-            </HBox>
         </items>
       </SplitPane>
    </children>
