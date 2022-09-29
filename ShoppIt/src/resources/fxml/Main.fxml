@@ -1,37 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainController">
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #EEEEEE;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainController">
    <children>
-      <SplitPane dividerPositions="0.2, 0.8" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" orientation="VERTICAL" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <items>
-            <VBox alignment="CENTER">
+      <StackPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" StackPane.alignment="BOTTOM_CENTER">
                <children>
-                  <Text fx:id="titleText" strokeType="OUTSIDE" strokeWidth="0.0" text="Shoppit!">
-                     <font>
-                        <Font size="72.0" />
-                     </font>
-                  </Text>
+                  <VBox alignment="BOTTOM_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <ImageView fitHeight="384.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
+                           <image>
+                              <Image url="@../images/frame.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </VBox>
                </children>
-            </VBox>
-            <VBox prefHeight="200.0" prefWidth="100.0">
+            </AnchorPane>
+            <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
                <children>
-                  <ListView fx:id="MainListView" editable="true" fixedCellSize="160.0" prefWidth="798.0" />
+                  <VBox prefWidth="871.0" AnchorPane.bottomAnchor="-21.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                              <ImageView fx:id="titleText" fitHeight="110.0" fitWidth="334.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/name.png" />
+                                 </image>
+                              </ImageView>
+                              <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                           </children>
+                           <VBox.margin>
+                              <Insets top="25.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <Text fill="#359c55" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Lists" wrappingWidth="159.19299697875977">
+                           <VBox.margin>
+                              <Insets left="75.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="Avenir Next Bold" size="28.0" />
+                           </font>
+                        </Text>
+                        <ListView fx:id="MainListView" editable="true" fixedCellSize="160.0" prefWidth="700.0" style="-fx-border-color: #359C57; -fx-border-width: 4; -fx-background-radius: 15; -fx-border-radius: 15;" VBox.vgrow="ALWAYS">
+                           <VBox.margin>
+                              <Insets left="75.0" right="75.0" top="10.0" />
+                           </VBox.margin>
+                        </ListView>
+                        <Button fx:id="AddListButton" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#newList" prefHeight="50.0" prefWidth="650.0" style="-fx-background-color: ffffff; -fx-border-color: #359C57; -fx-border-width: 4; -fx-background-radius: 15; -fx-border-radius: 15;" text="Add New List" textAlignment="CENTER" textFill="#359c55">
+                           <VBox.margin>
+                              <Insets bottom="70.0" left="75.0" right="75.0" top="30.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="Avenir Next Bold" size="24.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
                </children>
-            </VBox>
-            <VBox alignment="CENTER" prefWidth="489.0">
-               <children>
-                  <Button fx:id="AddListButton" alignment="CENTER" mnemonicParsing="false" onAction="#newList" text="Create New List" />
-               </children>
-            </VBox>
-        </items>
-      </SplitPane>
+            </AnchorPane>
+         </children>
+      </StackPane>
    </children>
 </AnchorPane>
