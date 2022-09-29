@@ -91,4 +91,19 @@ public class DatabaseManager {
         }
     }
 
+    public long newestListId(){
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+            long count = (long) session.createQuery("SELECT COUNT(i) FROM Item i GROUP BY i.listId").getSingleResult();
+            //list = session.createQuery(HQLQuery, targetClass).list();
+            tx.commit();
+            return count;
+        } catch (HibernateException e) {
+            if (tx != null) tx.rollback();
+            e.printStackTrace();
+            return 0;
+        }
+    }
+
 }
