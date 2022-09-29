@@ -33,16 +33,14 @@ public class InfoStore {
     public void persistList(){
 
         DatabaseManager databaseManager = new DatabaseManager();
-        System.out.println("initial id " + listId);
+
         if(listId == -1){
             listId = (int)databaseManager.newestListId();
-            System.out.println("found id " + listId);
             listId++;
         }
 
         for (Item item: itemList) {
             if(item.getListId() == 0) {
-                System.out.println("Adding to " + listId);
                 item.setListId(listId);
                 databaseManager.addObject(item);
             }
@@ -51,7 +49,7 @@ public class InfoStore {
         itemList.clear();
     }
 
-    public void eraseList(){
+    public void resetInfoStore(){
         itemList.clear();
         listId = -1;
     }

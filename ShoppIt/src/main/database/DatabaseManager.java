@@ -49,8 +49,6 @@ public class DatabaseManager {
             if (tx != null) tx.rollback();
             e.printStackTrace();
             list = new ArrayList<>();
-        } finally {
-            session.close();
         }
         return list;
     }
@@ -93,27 +91,15 @@ public class DatabaseManager {
     }
 
     public long newestListId(){
-        Transaction tx = null;
 
-        try {
-            session.clear();
-            tx = session.beginTransaction();
-            Object countResult = session.createQuery("SELECT COUNT(i) FROM Item i GROUP BY i.listId").setMaxResults(1).uniqueResult();
-            long count;
-            if(countResult == null){
-                count = 0;
-            } else
-                count = (long) countResult;
-            tx.commit();
+            List<Item> items = getAllFromDataBase(Item.class);
+            int count = 0;
+            for (Item item: items) {
+                if(item.getListId() > count){
+                    count = item.getListId();
+                }
+            }
             return count;
-
-        } catch (NoResultException e) {
-            System.out.println("CAUGHT");
-            if (tx != null) tx.rollback();
-            e.printStackTrace();
-            return 0;
-        }
-
     }
 
 }
