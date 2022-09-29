@@ -52,6 +52,9 @@ public class DetailedItemPopUpController{
 	public void addToList(ActionEvent event) {
 		InfoStore infoStore = InfoStore.getInstance();
 		Item currentItem = new Item(1,item.getId());
+
+		//adds the item to the list instance
+		infoStore.getList().add(currentItem);
 		
 		stage = (Stage) detailedItemGridPane.getScene().getWindow();
 		stage.close();

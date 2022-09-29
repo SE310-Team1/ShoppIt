@@ -2,3 +2,10 @@
     -fx-background-radius: 50;
     -fx-background-color: #359C57;
 }
+
+#imagePane {
+    -fx-background-image: url("../images/frame.png");
+    -fx-background-size: contain;
+    -fx-background-position: bottom;
+    -fx-background-repeat: no-repeat;
+}

@@ -4,6 +4,8 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -12,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SearchPopUpController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: eeeeee;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SearchPopUpController">
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
    </padding>
@@ -21,21 +23,36 @@
          <children>
             <AnchorPane>
                <children>
-                  <Button mnemonicParsing="false" onAction="#buttonBack" prefHeight="43.0" prefWidth="70.0" text="Back" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                  <Text layoutX="323.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Item" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <Button mnemonicParsing="false" onAction="#buttonBack" prefHeight="43.0" prefWidth="70.0" style="-fx-background-color: eeeeee;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="686.0" AnchorPane.topAnchor="0.0">
+                     <graphic>
+                        <ImageView fitHeight="56.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/arrow.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Text fill="#359c55" layoutX="252.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select an Item" AnchorPane.bottomAnchor="9.0" AnchorPane.topAnchor="6.0">
                      <font>
-                        <Font size="36.0" />
+                        <Font name="Avenir Next Bold" size="36.0" />
                      </font>
                   </Text>
                </children>
             </AnchorPane>
             <AnchorPane>
                <children>
-                  <TextField fx:id="searchTextField" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="580.0" style="-fx-background-radius: 5;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                  <Button fx:id="searchButton" mnemonicParsing="false" onAction="#search" prefHeight="40.0" prefWidth="150.0" style="-fx-background-radius: 5;" text="Search" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <TextField fx:id="searchTextField" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="580.0" style="-fx-background-radius: 5; -fx-border-color: #359c55; -fx-border-width: 2; -fx-border-radius: 5;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Button fx:id="searchButton" mnemonicParsing="false" onAction="#search" prefHeight="40.0" prefWidth="150.0" style="-fx-background-radius: 5; -fx-background-color: #359c55;" text="Search" textFill="WHITE" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <font>
-                        <Font size="16.0" />
+                        <Font name="Avenir Next Bold" size="16.0" />
                      </font>
+                     <graphic>
+                        <ImageView fitHeight="15.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/search.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </Button>
                </children>
             </AnchorPane>
@@ -52,6 +69,7 @@
                   </ScrollPane>
                </children>
             </HBox>
+            <ListView fx:id="searchResultsList" style="-fx-background-radius: 5;" VBox.vgrow="ALWAYS" />
          </children>
       </VBox>
    </children>
