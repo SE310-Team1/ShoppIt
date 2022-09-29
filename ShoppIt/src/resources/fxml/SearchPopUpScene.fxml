@@ -58,7 +58,7 @@
             </AnchorPane>
             <HBox prefHeight="433.0" prefWidth="760.0">
                <children>
-                  <ScrollPane prefHeight="100.0" prefWidth="762.0">
+                  <ScrollPane prefHeight="100.0" prefWidth="762.0" style="-fx-background-radius: 5">
                      <content>
                         <GridPane fx:id="gridPane">
                           <columnConstraints>
@@ -69,7 +69,6 @@
                   </ScrollPane>
                </children>
             </HBox>
-            <ListView fx:id="searchResultsList" style="-fx-background-radius: 5;" VBox.vgrow="ALWAYS" />
          </children>
       </VBox>
    </children>
