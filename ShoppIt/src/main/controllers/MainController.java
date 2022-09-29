@@ -31,6 +31,7 @@ public class MainController implements Initializable {
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         DatabaseManager DB = new DatabaseManager();
+
         lists = DB.getItems();
 
         // i set to 1 because lists variable has a null at index 0
@@ -42,7 +43,7 @@ public class MainController implements Initializable {
             @Override
             public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
                 int position = MainListView.getSelectionModel().getSelectedIndex()+1;
-                store.setList(lists.get(position));
+                store.setList(lists.get(position),position);
                 ScreenHandler.changeTo("individualListScene");
             }
         });

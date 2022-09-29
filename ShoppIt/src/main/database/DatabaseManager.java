@@ -2,6 +2,7 @@ package database;
 
 import database.models.FoodItem;
 import database.models.Item;
+import jakarta.persistence.NoResultException;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -48,8 +49,6 @@ public class DatabaseManager {
             if (tx != null) tx.rollback();
             e.printStackTrace();
             list = new ArrayList<>();
-        } finally {
-            session.close();
         }
         return list;
     }
@@ -89,6 +88,18 @@ public class DatabaseManager {
                 session.merge(item);
             }
         }
+    }
+
+    public long newestListId(){
+
+            List<Item> items = getAllFromDataBase(Item.class);
+            int count = 0;
+            for (Item item: items) {
+                if(item.getListId() > count){
+                    count = item.getListId();
+                }
+            }
+            return count;
     }
 
 }

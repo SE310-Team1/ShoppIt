@@ -3,18 +3,13 @@ package controllers;
 import helpers.DisplayFoodItems;
 import helpers.InfoStore;
 import helpers.ScreenHandler;
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import javafx.scene.input.MouseEvent;
 
 import java.util.ArrayList;
 import java.util.List;
-import database.models.FoodItem;
+
 import database.models.Item;
 
 /*
@@ -60,11 +55,14 @@ public class NewListSceneController {
 
 	// Runs when the back button is pressed
 	public void buttonBack(ActionEvent e) {
+		store.resetInfoStore();
 		ScreenHandler.changeTo("main");
 	}
 
 	/// Runs when the submit button is pressed
 	public void buttonSubmit(ActionEvent e) {
+
+		store.persistList();
 		ScreenHandler.changeTo("main");
 		//insert submission to database
 	}
