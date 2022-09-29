@@ -1,16 +1,31 @@
 package controllers;
 
+import application.Listener;
 import database.models.FoodItem;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+
+import java.awt.event.MouseEvent;
 
 public class IndividualFruitListController {
 
     @FXML
     private Label fruitNameLabel;
 
-    public void setData(String item) {
-        fruitNameLabel.setText(item);
+    @FXML
+    private void click(ActionEvent actionEvent) {
+        listener.onClickListener(item);
+    }
+
+    private Listener listener;
+    private FoodItem item;
+
+    public void setData(FoodItem item) {
+        this.item = item;
+        this.listener = listener;
+        fruitNameLabel.setText(item.getProductName());
+
 
     }
 }

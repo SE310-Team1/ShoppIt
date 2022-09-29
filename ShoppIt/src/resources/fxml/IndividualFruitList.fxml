@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="50.0" prefWidth="760.0" stylesheets="@../css/application.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.IndividualFruitListController">
+<AnchorPane onMouseClicked="#click" prefHeight="50.0" prefWidth="760.0" stylesheets="@../css/application.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.IndividualFruitListController">
    <children>
       <GridPane fx:id="cardGridPane" prefHeight="50.0" prefWidth="591.0">
         <columnConstraints>
