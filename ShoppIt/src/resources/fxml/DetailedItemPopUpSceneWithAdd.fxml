@@ -70,7 +70,7 @@
                      </padding>
                   </VBox>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="206.0" stroke="BLACK" strokeType="INSIDE" style="-fx-stroke-width: 4; -fx-stroke: #359C55;" width="209.0" />
-                  <ImageView fx:id="detailedItemImage" fitHeight="181.0" fitWidth="210.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                  <ImageView fx:id="detailedItemImage" fitHeight="166.0" fitWidth="193.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
                </children>
                <VBox.margin>
                   <Insets bottom="75.0" />
