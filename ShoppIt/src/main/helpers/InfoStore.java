@@ -34,19 +34,20 @@ public class InfoStore {
 
         DatabaseManager databaseManager = new DatabaseManager();
 
+        //checks if id has already been provided to the infoStore
         if(listId == -1){
             listId = (int)databaseManager.newestListId();
             listId++;
         }
 
         for (Item item: itemList) {
+            //If an item is not part of a list, then set it list Id to be that of the current list
             if(item.getListId() == 0) {
                 item.setListId(listId);
                 databaseManager.addObject(item);
             }
         }
-        listId = -1;
-        itemList.clear();
+       resetInfoStore();
     }
 
     public void resetInfoStore(){

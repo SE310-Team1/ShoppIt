@@ -90,6 +90,11 @@ public class DatabaseManager {
         }
     }
 
+    /**
+     * Get the highest/newest listId in the database
+     *
+     * @return int of the current highest listId
+     */
     public long newestListId(){
 
             List<Item> items = getAllFromDataBase(Item.class);
