@@ -56,12 +56,12 @@
                               <Font name="Avenir Next Bold" size="28.0" />
                            </font>
                         </Text>
-                        <ListView fx:id="MainListView" editable="true" fixedCellSize="160.0" prefWidth="700.0" style="-fx-border-color: #359C57; -fx-border-width: 4; -fx-background-radius: 15; -fx-border-radius: 15;" VBox.vgrow="ALWAYS">
+                        <ListView fx:id="MainListView" editable="true" fixedCellSize="160.0" prefWidth="700.0" style="-fx-border-color: #359C57; -fx-border-width: 4; -fx-background-radius: 5; -fx-border-radius: 5;" VBox.vgrow="ALWAYS">
                            <VBox.margin>
                               <Insets left="75.0" right="75.0" top="10.0" />
                            </VBox.margin>
                         </ListView>
-                        <Button fx:id="AddListButton" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#newList" prefHeight="50.0" prefWidth="650.0" style="-fx-background-color: ffffff; -fx-border-color: #359C57; -fx-border-width: 4; -fx-background-radius: 15; -fx-border-radius: 15;" text="Add New List" textAlignment="CENTER" textFill="#359c55">
+                        <Button fx:id="AddListButton" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#newList" prefHeight="50.0" prefWidth="650.0" style="-fx-background-color: ffffff; -fx-border-color: #359C57; -fx-border-width: 4; -fx-background-radius: 5; -fx-border-radius: 5;" text="Add New List" textAlignment="CENTER" textFill="#359c55">
                            <VBox.margin>
                               <Insets bottom="70.0" left="75.0" right="75.0" top="30.0" />
                            </VBox.margin>
