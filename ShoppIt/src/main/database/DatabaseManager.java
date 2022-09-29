@@ -2,6 +2,7 @@ package database;
 
 import database.models.FoodItem;
 import database.models.Item;
+import jakarta.persistence.NoResultException;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -93,17 +94,21 @@ public class DatabaseManager {
 
     public long newestListId(){
         Transaction tx = null;
+        long count = 0;
         try {
             tx = session.beginTransaction();
-            long count = (long) session.createQuery("SELECT COUNT(i) FROM Item i GROUP BY i.listId").getSingleResult();
+            count = (long) session.createQuery("SELECT COUNT(i) FROM Item i GROUP BY i.listId").setMaxResults(1).uniqueResult();
             //list = session.createQuery(HQLQuery, targetClass).list();
             tx.commit();
             return count;
-        } catch (HibernateException e) {
+
+        } catch (NoResultException e) {
+            System.out.println("CAUGHT");
             if (tx != null) tx.rollback();
             e.printStackTrace();
             return 0;
         }
+
     }
 
 }
