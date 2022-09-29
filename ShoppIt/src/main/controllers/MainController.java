@@ -31,6 +31,9 @@ public class MainController implements Initializable {
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         DatabaseManager DB = new DatabaseManager();
+
+
+
         lists = DB.getItems();
 
         // i set to 1 because lists variable has a null at index 0

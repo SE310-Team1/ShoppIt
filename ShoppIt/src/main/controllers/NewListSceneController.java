@@ -65,6 +65,8 @@ public class NewListSceneController {
 
 	/// Runs when the submit button is pressed
 	public void buttonSubmit(ActionEvent e) {
+
+		store.persistList();
 		ScreenHandler.changeTo("main");
 		//insert submission to database
 	}
