@@ -33,10 +33,10 @@ public class InfoStore {
     public void persistList(){
 
         DatabaseManager databaseManager = new DatabaseManager();
-        System.out.println(listId);
+        System.out.println("initial id " + listId);
         if(listId == -1){
             listId = (int)databaseManager.newestListId();
-            System.out.println(listId);
+            System.out.println("found id " + listId);
             listId++;
         }
 

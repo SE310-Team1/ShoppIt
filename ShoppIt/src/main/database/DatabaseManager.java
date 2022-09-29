@@ -94,11 +94,16 @@ public class DatabaseManager {
 
     public long newestListId(){
         Transaction tx = null;
-        long count = 0;
+
         try {
+            session.clear();
             tx = session.beginTransaction();
-            count = (long) session.createQuery("SELECT COUNT(i) FROM Item i GROUP BY i.listId").setMaxResults(1).uniqueResult();
-            //list = session.createQuery(HQLQuery, targetClass).list();
+            Object countResult = session.createQuery("SELECT COUNT(i) FROM Item i GROUP BY i.listId").setMaxResults(1).uniqueResult();
+            long count;
+            if(countResult == null){
+                count = 0;
+            } else
+                count = (long) countResult;
             tx.commit();
             return count;
 
