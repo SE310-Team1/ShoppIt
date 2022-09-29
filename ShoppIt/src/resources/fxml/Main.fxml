@@ -7,6 +7,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
@@ -19,15 +20,7 @@
          <children>
             <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
                <children>
-                  <VBox alignment="BOTTOM_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <children>
-                        <ImageView fitHeight="264.0" fitWidth="800.0" pickOnBounds="true">
-                           <image>
-                              <Image url="@../images/frame.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </VBox>
+                  <Pane id="imagePane" stylesheets="@../css/application.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                   <VBox prefWidth="871.0" AnchorPane.bottomAnchor="-21.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <HBox prefHeight="100.0" prefWidth="200.0">
