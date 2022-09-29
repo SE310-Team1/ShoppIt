@@ -17,21 +17,17 @@
    <children>
       <StackPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <AnchorPane maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" StackPane.alignment="BOTTOM_CENTER">
+            <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
                <children>
                   <VBox alignment="BOTTOM_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <ImageView fitHeight="384.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
+                        <ImageView fitHeight="264.0" fitWidth="800.0" pickOnBounds="true">
                            <image>
                               <Image url="@../images/frame.png" />
                            </image>
                         </ImageView>
                      </children>
                   </VBox>
-               </children>
-            </AnchorPane>
-            <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
-               <children>
                   <VBox prefWidth="871.0" AnchorPane.bottomAnchor="-21.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <HBox prefHeight="100.0" prefWidth="200.0">
