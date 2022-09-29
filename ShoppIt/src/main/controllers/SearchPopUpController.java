@@ -10,12 +10,9 @@ import java.util.Map.Entry;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-import application.Listener;
 import database.DatabaseManager;
 import database.models.FoodItem;
 import helpers.ScreenHandler;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -76,7 +73,9 @@ public class SearchPopUpController implements Initializable {
 				foodItems.put(item, item.getProductName());
 			}
 
-		} catch (Exception e) {}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
 	}
 	
@@ -128,12 +127,18 @@ public class SearchPopUpController implements Initializable {
 		ScreenHandler.changeTo("newListScene");
 	}
 
+	/**
+	 * Individual cards within search pop up screen are loaded by injecting data into a card view
+	 *
+	 * @param item Specific item being added
+	 */
 	public void setCards(FoodItem item) {
 		try {
 			FXMLLoader fxmlloader = new FXMLLoader();
 			fxmlloader.setLocation(getClass().getResource("/fxml/IndividualFruitList.fxml"));
 			AnchorPane anchor = fxmlloader.load();
 
+			// Implementation of click functionality of items in list
 			anchor.addEventHandler(MouseEvent.MOUSE_PRESSED, new EventHandler<MouseEvent>() {
 				public void handle(MouseEvent mouseEvent) {
 					try {
@@ -174,7 +179,9 @@ public class SearchPopUpController implements Initializable {
 
 			gridPane.add(anchor, column, row++);
 			GridPane.setMargin(anchor, new Insets(10));
-		} catch (Exception e) {}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }
