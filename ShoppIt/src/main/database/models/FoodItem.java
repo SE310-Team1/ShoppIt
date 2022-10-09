@@ -2,6 +2,8 @@ package database.models;
 
 import jakarta.persistence.*;
 
+import java.util.Objects;
+
 @Entity
 @Table(name = "FOOD_ITEMS")
 public class FoodItem {
@@ -72,5 +74,19 @@ public class FoodItem {
     public void setImgFilename(String imgFilename) {
         this.imgFilename = imgFilename;
     }
+
+   @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        FoodItem foodItem = (FoodItem) o;
+        return id == foodItem.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
 }
 

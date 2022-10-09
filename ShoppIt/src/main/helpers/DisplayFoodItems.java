@@ -9,23 +9,23 @@ import database.models.Item;
 
 public class DisplayFoodItems {
 
-    public static List<String> ListFoodItems(List<Item> List) {
+    public static List<String> ListFoodItems(List<FoodItem> foodList) {
         List<String> foodItems = new ArrayList<String>();
 
-        for (int i = 0; i < List.size(); i++) {
-            String foodName = getFoodName(List.get(i));
-            foodItems.add(foodName);
+        for (int i = 0; i < foodList.size(); i++) {
+            //String foodName = getFoodName(List.get(i));
+            String productName = foodList.get(i).getProductName();
+            foodItems.add(productName);
         }
 
         return foodItems;
     }
 
-    private static String getFoodName(Item Item) {
-        int foodID = Item.getItemId();
+    private static String getFoodName(FoodItem Item) {
+        int foodID = Item.getId();
         DatabaseManager DB = new DatabaseManager();
-        Class<FoodItem> FoodItem = null;
-        List<FoodItem> foodItems = new ArrayList<FoodItem>();
-        foodItems = DB.getFromDatabase(FoodItem, "FROM FoodItem item WHERE item.id = " +Integer.toString(foodID));
+        List<FoodItem> foodItems;
+        foodItems = DB.getFromDatabase(FoodItem.class, "FROM FoodItem item WHERE item.id = " +Integer.toString(foodID));
         return foodItems.get(0).getProductName();
     }
 }

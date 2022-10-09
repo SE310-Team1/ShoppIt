@@ -1,5 +1,6 @@
 package controllers;
 
+import database.models.FoodItem;
 import helpers.DisplayFoodItems;
 import helpers.InfoStore;
 import helpers.ScreenHandler;
@@ -9,6 +10,7 @@ import javafx.scene.control.ListView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import database.models.Item;
 
@@ -21,14 +23,14 @@ public class NewListSceneController {
     private ListView<String> newListListView;
 
 	InfoStore store = InfoStore.getInstance();
-	List<Item> itemList = store.getList();
+	Set<FoodItem> itemList = store.getList();
 
 	@FXML
 	public void initialize() {
 		itemList = store.getList();
 
 		List<String> foodNames = new ArrayList<String>();
-		foodNames = DisplayFoodItems.ListFoodItems(itemList);
+		foodNames = DisplayFoodItems.ListFoodItems(itemList.stream().toList());
 		newListListView.getItems().addAll(foodNames);
 		// load stuff into labels
 		// individualListSceneTitle.setText("HI");

@@ -2,6 +2,7 @@ package database;
 
 import database.models.FoodItem;
 import database.models.Item;
+import database.models.ShoppingList;
 import jakarta.persistence.NoResultException;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -19,7 +20,7 @@ public class DatabaseManager {
     private Session session;
 
     public DatabaseManager() {
-        Configuration con = new Configuration().configure().addAnnotatedClass(FoodItem.class).addAnnotatedClass(Item.class);
+        Configuration con = new Configuration().configure().addAnnotatedClass(FoodItem.class).addAnnotatedClass(Item.class).addAnnotatedClass(ShoppingList.class);
         ServiceRegistry registry = new StandardServiceRegistryBuilder().applySettings(con.getProperties()).build();
         SessionFactory sessionFactory = con.buildSessionFactory(registry);
         session = sessionFactory.openSession();
@@ -32,6 +33,12 @@ public class DatabaseManager {
         tx.commit();
     }
 
+    public void updateObject(Object o) {
+        Transaction tx = session.beginTransaction();
+        session.merge(o);
+        tx.commit();
+    }
+
     /**
      * @param targetClass
      * @param HQLQuery    For getting all items of a particular class use "FROM classname"
@@ -41,6 +48,7 @@ public class DatabaseManager {
     public <T> List<T> getFromDatabase(Class<T> targetClass, String HQLQuery) {
         Transaction tx = null;
         List<T> list;
+
         try {
             tx = session.beginTransaction();
             list = session.createQuery(HQLQuery, targetClass).list();
@@ -77,6 +85,14 @@ public class DatabaseManager {
             lists.get(listCount).add(item);
         }
         return lists;
+    }
+
+    public List<ShoppingList> getShoppingList() {
+
+        //List<ShoppingList> shoppingLists = new ArrayList<>();
+        //shoppingLists.addAll(getAllFromDataBase(ShoppingList.class));
+        List<ShoppingList> shoppingLists = getFromDatabase(ShoppingList.class, "FROM ShoppingList i");
+        return shoppingLists;
     }
 
     public void updateImage(String foodName, String update) {

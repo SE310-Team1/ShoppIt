@@ -51,10 +51,10 @@ public class DetailedItemPopUpController{
 	//Adds item to current new list. Closes item pop up afterwards.
 	public void addToList(ActionEvent event) {
 		InfoStore infoStore = InfoStore.getInstance();
-		Item currentItem = new Item(1,item.getId());
+		//Item currentItem = new Item(1,item.getId());
 
 		//adds the item to the list instance
-		infoStore.getList().add(currentItem);
+		infoStore.getList().add(item);
 		
 		stage = (Stage) detailedItemGridPane.getScene().getWindow();
 		stage.close();
