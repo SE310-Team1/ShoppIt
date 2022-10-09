@@ -1,7 +1,6 @@
 package helpers;
 
 import java.util.Set;
-
 import database.DatabaseManager;
 import database.models.FoodItem;
 import database.models.ShoppingList;
@@ -59,5 +58,6 @@ public class InfoStore {
     public static void resetInfoStore(){
         items.clear();
         newShoppingList = null;
+
     }
 }

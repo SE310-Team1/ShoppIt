@@ -41,6 +41,7 @@ public class MainController implements Initializable {
             public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
                 int position = MainListView.getSelectionModel().getSelectedIndex();
                 store.setShoppingList(lists.get(position));
+                
                 ScreenHandler.changeTo("individualListScene");
             }
         });

@@ -10,6 +10,7 @@ import javafx.scene.control.ListView;
 
 import java.util.List;
 import java.util.Set;
+import database.models.Item;
 
 /*
  * Controller for the display individual list page
