@@ -1,15 +1,15 @@
 package helpers;
 
-import java.util.List;
-
+import java.util.Set;
 import database.DatabaseManager;
-import database.models.Item;
+import database.models.FoodItem;
+import database.models.ShoppingList;
 
 public class InfoStore {
 
 	private static InfoStore instance = null;
-    private List<Item> itemList;
-    private static int listId = -1;
+    private static Set<FoodItem> items;
+    private static ShoppingList newShoppingList = null;
     
     public static InfoStore getInstance() {
 		if (instance == null) {
@@ -18,40 +18,46 @@ public class InfoStore {
 		return instance;
 	}
 
-    public void setList(List<Item> itemList) {
-        this.itemList = itemList;
+    public static void setItems(Set<FoodItem> items) {
+        InfoStore.items = items;
     }
 
-    public void setList(List<Item> itemList, int listID){
-        this.itemList = itemList;
-        this.listId = listID;
-    }
-    public List<Item> getList() {
-        return itemList;
+    public static void setShoppingList(ShoppingList newShoppingList){
+        InfoStore.newShoppingList = newShoppingList;
+        items = newShoppingList.getItems();
     }
 
-    public void persistList(){
+    public Set<FoodItem> getItems() {
+        return items;
+    }
+
+    public static void persistItems(){
+
+        if(items.isEmpty()){
+            resetInfoStore();
+            return;
+        }
 
         DatabaseManager databaseManager = new DatabaseManager();
 
-        //checks if id has already been provided to the infoStore
-        if(listId == -1){
-            listId = (int)databaseManager.newestListId();
-            listId++;
-        }
+        /*
+        if a shopping list is in infostore then we are updating it, so we need to
+         */
+        if(newShoppingList == null){
+            newShoppingList = new ShoppingList();
+            newShoppingList.getItems().addAll(items);
+            databaseManager.addObject(newShoppingList);
 
-        for (Item item: itemList) {
-            //If an item is not part of a list, then set it list Id to be that of the current list
-            if(item.getListId() == 0) {
-                item.setListId(listId);
-                databaseManager.addObject(item);
-            }
+        } else {
+            newShoppingList.getItems().addAll(items);
+            databaseManager.updateObject(newShoppingList);
         }
        resetInfoStore();
     }
 
-    public void resetInfoStore(){
-        itemList.clear();
-        listId = -1;
+    public static void resetInfoStore(){
+        items.clear();
+        newShoppingList = null;
+
     }
 }

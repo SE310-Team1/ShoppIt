@@ -1,16 +1,13 @@
 package controllers;
 
 import java.net.URL;
-import java.util.ResourceBundle;
+import java.util.*;
 
+import database.models.FoodItem;
+import database.models.ShoppingList;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import database.DatabaseManager;
-import database.models.Item;
-
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
 
 import helpers.InfoStore;
 import helpers.ScreenHandler;
@@ -25,33 +22,34 @@ public class MainController implements Initializable {
     private ListView<String> MainListView;
 
     InfoStore store = InfoStore.getInstance();
-    List<List<Item>> lists = new LinkedList<>();
+    //List<List<Item>> lists = new LinkedList<>();
+    List<ShoppingList> lists = new ArrayList<>();
 
     // Set up lists in main scene
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         DatabaseManager DB = new DatabaseManager();
 
-        lists = DB.getItems();
+        lists = DB.getFromDatabase(ShoppingList.class, "FROM ShoppingList s");
 
-        // i set to 1 because lists variable has a null at index 0
-        for (int i = 1; i < lists.size(); i++) {
+        for (int i = 0; i < lists.size(); i++) {
             MainListView.getItems().add("List" + Integer.toString(i));
         }
 
         MainListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
-                int position = MainListView.getSelectionModel().getSelectedIndex()+1;
-                store.setList(lists.get(position),position);
+                int position = MainListView.getSelectionModel().getSelectedIndex();
+                store.setShoppingList(lists.get(position));
+                
                 ScreenHandler.changeTo("individualListScene");
             }
         });
     }
 
     public void newList(ActionEvent e) {
-        List<Item> newList = new ArrayList<Item>();
-        store.setList(newList);
+        Set<FoodItem> newList = new HashSet<>();
+        store.setItems(newList);
         ScreenHandler.changeTo("newListScene");
     }
 
