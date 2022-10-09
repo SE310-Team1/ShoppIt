@@ -12,8 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-import database.models.Item;
-
 /*
  * Controller for the new/edit list page
  */
@@ -23,11 +21,11 @@ public class NewListSceneController {
     private ListView<String> newListListView;
 
 	InfoStore store = InfoStore.getInstance();
-	Set<FoodItem> itemList = store.getList();
+	Set<FoodItem> itemList = store.getItems();
 
 	@FXML
 	public void initialize() {
-		itemList = store.getList();
+		itemList = store.getItems();
 
 		List<String> foodNames = new ArrayList<String>();
 		foodNames = DisplayFoodItems.ListFoodItems(itemList.stream().toList());
@@ -64,7 +62,7 @@ public class NewListSceneController {
 	/// Runs when the submit button is pressed
 	public void buttonSubmit(ActionEvent e) {
 
-		store.persistList();
+		store.persistItems();
 		ScreenHandler.changeTo("main");
 		//insert submission to database
 	}

@@ -87,14 +87,6 @@ public class DatabaseManager {
         return lists;
     }
 
-    public List<ShoppingList> getShoppingList() {
-
-        //List<ShoppingList> shoppingLists = new ArrayList<>();
-        //shoppingLists.addAll(getAllFromDataBase(ShoppingList.class));
-        List<ShoppingList> shoppingLists = getFromDatabase(ShoppingList.class, "FROM ShoppingList i");
-        return shoppingLists;
-    }
-
     public void updateImage(String foodName, String update) {
         List<FoodItem> foodItemObjects = session.createQuery("select f FROM FoodItem f", FoodItem.class).list();
         for (FoodItem item : foodItemObjects) {

@@ -9,9 +9,7 @@ import database.models.ShoppingList;
 public class InfoStore {
 
 	private static InfoStore instance = null;
-    private Set<FoodItem> itemList;
-    private static int listId = -1;
-
+    private static Set<FoodItem> items;
     private static ShoppingList newShoppingList = null;
     
     public static InfoStore getInstance() {
@@ -21,50 +19,45 @@ public class InfoStore {
 		return instance;
 	}
 
-    public void setList(Set<FoodItem> itemList) {
-        this.itemList = itemList;
+    public static void setItems(Set<FoodItem> items) {
+        InfoStore.items = items;
     }
 
-    public void setShoppingList(ShoppingList newShoppingList){
-        this.newShoppingList = newShoppingList;
-        this.itemList = newShoppingList.getItems();
+    public static void setShoppingList(ShoppingList newShoppingList){
+        InfoStore.newShoppingList = newShoppingList;
+        items = newShoppingList.getItems();
     }
 
-    public Set<FoodItem> getList() {
-        return itemList;
+    public Set<FoodItem> getItems() {
+        return items;
     }
 
-    public void persistList(){
+    public static void persistItems(){
+
+        if(items.isEmpty()){
+            resetInfoStore();
+            return;
+        }
 
         DatabaseManager databaseManager = new DatabaseManager();
 
-        //checks if id has already been provided to the infoStore
-        /*if(listId == -1){
-            listId = (int)databaseManager.newestListId();
-            listId++;
-        }
-
+        /*
+        if a shopping list is in infostore then we are updating it, so we need to
          */
-
         if(newShoppingList == null){
             newShoppingList = new ShoppingList();
-            newShoppingList.getItems().addAll(itemList);
+            newShoppingList.getItems().addAll(items);
             databaseManager.addObject(newShoppingList);
 
         } else {
-            newShoppingList.getItems().addAll(itemList);
-            System.out.println(newShoppingList.getItems().size());
-            for (FoodItem item : newShoppingList.getItems()) {
-                System.out.println(item.getId());
-            }
+            newShoppingList.getItems().addAll(items);
             databaseManager.updateObject(newShoppingList);
         }
        resetInfoStore();
     }
 
-    public void resetInfoStore(){
-        itemList.clear();
+    public static void resetInfoStore(){
+        items.clear();
         newShoppingList = null;
-        listId = -1;
     }
 }

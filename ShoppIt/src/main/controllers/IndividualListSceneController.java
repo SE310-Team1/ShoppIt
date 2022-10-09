@@ -8,7 +8,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -36,7 +35,7 @@ public class IndividualListSceneController {
 
 	@FXML
 	public void initialize() {
-		itemSet = store.getList();
+		itemSet = store.getItems();
 
 		List<String> foodNames = DisplayFoodItems.ListFoodItems(itemSet.stream().toList());
 		ItemListView.getItems().addAll(foodNames);

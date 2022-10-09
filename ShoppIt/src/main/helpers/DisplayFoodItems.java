@@ -10,14 +10,12 @@ import database.models.Item;
 public class DisplayFoodItems {
 
     public static List<String> ListFoodItems(List<FoodItem> foodList) {
-        List<String> foodItems = new ArrayList<String>();
+        List<String> foodItems = new ArrayList<>();
 
-        for (int i = 0; i < foodList.size(); i++) {
-            //String foodName = getFoodName(List.get(i));
-            String productName = foodList.get(i).getProductName();
+        for (FoodItem foodItem : foodList) {
+            String productName = foodItem.getProductName();
             foodItems.add(productName);
         }
-
         return foodItems;
     }
 
