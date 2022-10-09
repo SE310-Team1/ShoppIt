@@ -18,12 +18,4 @@ public class DisplayFoodItems {
         }
         return foodItems;
     }
-
-    private static String getFoodName(FoodItem Item) {
-        int foodID = Item.getId();
-        DatabaseManager DB = new DatabaseManager();
-        List<FoodItem> foodItems;
-        foodItems = DB.getFromDatabase(FoodItem.class, "FROM FoodItem item WHERE item.id = " +Integer.toString(foodID));
-        return foodItems.get(0).getProductName();
-    }
 }
