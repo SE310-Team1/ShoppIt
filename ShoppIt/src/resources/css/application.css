@@ -44,16 +44,31 @@ Text {
     -fx-border-width: 2;
     -fx-background-radius: 5;
     -fx-border-radius: 5;
+    -fx-font-family: "Avenir Next";
 }
 
-.primary  {
+.text-field.primary {
+    -fx-border-color: "#359C57";
+}
+
+.text-field.secondary  {
     -fx-border-color: "#E13F18";
 }
 
-.secondary {
+.text-field.tertiary {
     -fx-border-color: "#FFA707";
 }
 
+.button.image {
+    -fx-background-color: "#EEEEEE";
+    -fx-border-width: 0;
+}
+
+.scroll-pane {
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-border-color: grey;
+}
 
 
 
