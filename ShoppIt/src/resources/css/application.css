@@ -1,6 +1,17 @@
+* {
+    -primary-color: #359C57;
+    -secondary-color: #E13F18;
+    -tertiary-color: #FFA707;
+    -background-color: #EEEEEE;
+}
+
+.root {
+    -fx-background-color: -background-color;
+}
+
 #cardGridPane {
     -fx-background-radius: 50;
-    -fx-background-color: #359C57;
+    -fx-background-color: -primary-color;
 }
 
 #imagePane {
@@ -11,7 +22,7 @@
 }
 
 .list-view {
-    -fx-border-color:  "#359C57";
+    -fx-border-color:  -primary-color;
     -fx-border-width: 4;
     -fx-background-radius: 5;
     -fx-border-radius: 5;
@@ -19,24 +30,24 @@
 
 .button {
     -fx-background-color: white;
-    -fx-border-color:  "#359C57";
+    -fx-border-color:  -primary-color;
     -fx-border-width: 4;
     -fx-background-radius: 5;
     -fx-border-radius: 5;
 
-    -fx-text-fill: "#359C57";
+    -fx-text-fill: -primary-color;
     -fx-font-family: "Avenir Next";
 }
 
 .button.inverted {
-    -fx-background-color: "#359C57";
-    -fx-border-color:  "#359C57";
+    -fx-background-color: -primary-color;
+    -fx-border-color:  -primary-color;
 
     -fx-text-fill: white;
 }
 
 Text {
-    -fx-fill: "#359C57";
+    -fx-fill: -primary-color;
     -fx-font-family: "Avenir Next";
 }
 
@@ -48,19 +59,19 @@ Text {
 }
 
 .text-field.primary {
-    -fx-border-color: "#359C57";
+    -fx-border-color: -primary-color;
 }
 
 .text-field.secondary  {
-    -fx-border-color: "#E13F18";
+    -fx-border-color: -secondary-color;
 }
 
 .text-field.tertiary {
-    -fx-border-color: "#FFA707";
+    -fx-border-color: -tertiary-color;
 }
 
 .button.image {
-    -fx-background-color: "#EEEEEE";
+    -fx-background-color: -background-color;
     -fx-border-width: 0;
 }
 
@@ -76,7 +87,7 @@ Text {
 
 .rectangle {
     -fx-stroke-width: 4;
-    -fx-stroke: "#359C55";
+    -fx-stroke: -primary-color;
 }
 
 
