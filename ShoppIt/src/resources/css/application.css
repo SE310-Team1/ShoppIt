@@ -22,7 +22,8 @@
 
     -fx-text-fill: -primary-color;
     -fx-font-family: "Avenir Next";
-    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-font-size: 20px;
 }
 
 .button.inverted {
@@ -47,7 +48,7 @@ Text {
     -fx-border-width: 2;
     -fx-background-radius: 5;
     -fx-border-radius: 5;
-    -fx-font-family: "Avenir Next";
+    -fx-font-family: "Avenir Book";
 }
 
 .text-field.primary {
@@ -67,6 +68,8 @@ Text {
 
 .info {
     -fx-fill: black;
+    -fx-font-family: "Avenir Book";
+    -fx-font-size: 18px;
 }
 
 /*Panes and other components*/
