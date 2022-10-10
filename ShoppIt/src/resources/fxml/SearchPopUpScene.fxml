@@ -58,7 +58,7 @@
             </AnchorPane>
             <HBox prefHeight="433.0" prefWidth="760.0">
                <children>
-                  <ScrollPane prefHeight="100.0" prefWidth="762.0" style="-fx-background-radius: 5">
+                  <ScrollPane prefHeight="100.0" prefWidth="762.0">
                      <content>
                         <GridPane fx:id="gridPane">
                           <columnConstraints>

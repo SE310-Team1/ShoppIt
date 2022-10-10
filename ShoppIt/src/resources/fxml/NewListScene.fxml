@@ -46,7 +46,7 @@
                         <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
-                  <TextField fx:id="NewListTitle" prefHeight="49.0" prefWidth="698.0" styleClass="primary" text="Title">
+                  <TextField fx:id="NewListTitle" prefHeight="49.0" prefWidth="698.0" styleClass="secondary" text="Title">
                      <font>
                         <Font name="Avenir Book" size="24.0" />
                      </font>
@@ -54,7 +54,7 @@
                         <Insets left="50.0" right="50.0" top="20.0" />
                      </VBox.margin>
                   </TextField>
-                  <TextField fx:id="NewListDescription" alignment="TOP_LEFT" prefHeight="80.0" prefWidth="698.0" styleClass="secondary" text="Description">
+                  <TextField fx:id="NewListDescription" alignment="TOP_LEFT" prefHeight="80.0" prefWidth="698.0" styleClass="tertiary" text="Description">
                      <font>
                         <Font name="Avenir Book" size="16.0" />
                      </font>
