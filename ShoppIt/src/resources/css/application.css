@@ -70,6 +70,15 @@ Text {
     -fx-border-color: grey;
 }
 
+.info {
+    -fx-fill: black;
+}
+
+.rectangle {
+    -fx-stroke-width: 4;
+    -fx-stroke: "#359C55";
+}
+
 
 
 

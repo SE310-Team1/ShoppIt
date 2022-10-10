@@ -13,13 +13,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: EEEEEE;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DetailedItemPopUpController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: EEEEEE;" stylesheets="@../css/application.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DetailedItemPopUpController">
    <children>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Text fx:id="detailedItemTitle" fill="#359c55" strokeType="OUTSIDE" strokeWidth="0.0" text="Item Title">
+            <Text fx:id="detailedItemTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Item Title">
                <font>
-                  <Font name="Avenir Next Bold" size="34.0" />
+                  <Font name="System Bold" size="34.0" />
                </font>
                <VBox.margin>
                   <Insets bottom="20.0" />
@@ -36,12 +36,12 @@
                <children>
                   <VBox prefHeight="247.0" prefWidth="377.0" GridPane.columnIndex="1">
                      <children>
-                        <Text fx:id="detailedItemPrice" strokeType="OUTSIDE" strokeWidth="0.0" text="Price:">
+                        <Text fx:id="detailedItemPrice" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="info" text="Price:">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </Text>
-                        <Text fx:id="detailedItemBrand" strokeType="OUTSIDE" strokeWidth="0.0" text="Brand:">
+                        <Text fx:id="detailedItemBrand" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="info" text="Brand:">
                            <font>
                               <Font size="20.0" />
                            </font>
@@ -49,17 +49,17 @@
                               <Insets bottom="20.0" />
                            </VBox.margin>
                         </Text>
-                        <Text fx:id="detailedItemDietClassification" strokeType="OUTSIDE" strokeWidth="0.0" text="Diet Classification: ">
+                        <Text fx:id="detailedItemDietClassification" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="info" text="Diet Classification: ">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </Text>
-                        <Text fx:id="detailedItemWeight" strokeType="OUTSIDE" strokeWidth="0.0" text="Weight:">
+                        <Text fx:id="detailedItemWeight" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="info" text="Weight:">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </Text>
-                        <Text fx:id="detailedItemTotalCalories" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Calories:">
+                        <Text fx:id="detailedItemTotalCalories" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="info" text="Total Calories:">
                            <font>
                               <Font size="20.0" />
                            </font>
@@ -69,7 +69,7 @@
                         <Insets bottom="100.0" left="20.0" right="20.0" top="100.0" />
                      </padding>
                   </VBox>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="206.0" stroke="BLACK" strokeType="INSIDE" style="-fx-stroke-width: 4; -fx-stroke: #359C55;" width="209.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="206.0" stroke="BLACK" strokeType="INSIDE" styleClass="rectangle" width="209.0" />
                   <ImageView fx:id="detailedItemImage" fitHeight="166.0" fitWidth="193.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
                </children>
                <VBox.margin>
@@ -78,11 +78,11 @@
             </GridPane>
          </children>
       </VBox>
-      <Button fx:id="detailedItemAddButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#addToList" prefHeight="50.0" prefWidth="500.0" style="-fx-background-color: #359C55; -fx-background-radius: 5;" text="Add to List" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <Button fx:id="detailedItemAddButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#addToList" prefHeight="50.0" prefWidth="500.0" styleClass="inverted" text="Add to List" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <font>
             <Font name="Avenir Next Bold" size="24.0" />
          </font></Button>
-      <Button fx:id="detailedItemExitButton" layoutX="60.0" layoutY="60.0" mnemonicParsing="false" onAction="#exitPopUp" prefHeight="24.0" prefWidth="35.0" style="-fx-background-color: eeeee;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Button fx:id="detailedItemExitButton" layoutX="60.0" layoutY="60.0" mnemonicParsing="false" onAction="#exitPopUp" prefHeight="24.0" prefWidth="35.0" style="-fx-background-color: eeeee;" styleClass="image" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <graphic>
             <ImageView fitHeight="34.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                <image>
