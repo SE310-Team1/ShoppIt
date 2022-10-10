@@ -9,3 +9,26 @@
     -fx-background-position: bottom;
     -fx-background-repeat: no-repeat;
 }
+
+.list-view {
+    -fx-border-color:  "#359C57";
+    -fx-border-width: 4;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+}
+
+.button {
+    -fx-background-color: white;
+    -fx-border-color:  "#359C57";
+    -fx-border-width: 4;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+
+    -fx-text-fill: "#359C57";
+    -fx-font-family: "Avenir Next";
+}
+
+Text {
+    -fx-fill: "#359C57";
+    -fx-font-family: "Avenir Next";
+}
