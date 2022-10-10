@@ -37,6 +37,7 @@
 
     -fx-text-fill: -primary-color;
     -fx-font-family: "Avenir Next";
+    -fx-font-size: 24px;
 }
 
 .button.inverted {
@@ -44,6 +45,11 @@
     -fx-border-color:  -primary-color;
 
     -fx-text-fill: white;
+}
+
+.button.image {
+    -fx-background-color: -background-color;
+    -fx-border-width: 0;
 }
 
 Text {
@@ -60,19 +66,17 @@ Text {
 
 .text-field.primary {
     -fx-border-color: -primary-color;
+    -fx-font-size: 24px;
 }
 
 .text-field.secondary  {
     -fx-border-color: -secondary-color;
+    -fx-font-size: 24px;
 }
 
 .text-field.tertiary {
     -fx-border-color: -tertiary-color;
-}
-
-.button.image {
-    -fx-background-color: -background-color;
-    -fx-border-width: 0;
+    -fx-font-size: 18px;
 }
 
 .scroll-pane {
