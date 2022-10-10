@@ -28,7 +28,33 @@
     -fx-font-family: "Avenir Next";
 }
 
+.button.inverted {
+    -fx-background-color: "#359C57";
+    -fx-border-color:  "#359C57";
+
+    -fx-text-fill: white;
+}
+
 Text {
     -fx-fill: "#359C57";
     -fx-font-family: "Avenir Next";
 }
+
+.text-field {
+    -fx-border-width: 2;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+}
+
+.primary  {
+    -fx-border-color: "#E13F18";
+}
+
+.secondary {
+    -fx-border-color: "#FFA707";
+}
+
+
+
+
+
