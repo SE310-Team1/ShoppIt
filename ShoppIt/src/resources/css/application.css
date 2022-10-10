@@ -1,3 +1,5 @@
+/*Variables*/
+
 * {
     -primary-color: #359C57;
     -secondary-color: #E13F18;
@@ -9,24 +11,7 @@
     -fx-background-color: -background-color;
 }
 
-#cardGridPane {
-    -fx-background-radius: 50;
-    -fx-background-color: -primary-color;
-}
-
-#imagePane {
-    -fx-background-image: url("../images/frame.png");
-    -fx-background-size: contain;
-    -fx-background-position: bottom;
-    -fx-background-repeat: no-repeat;
-}
-
-.list-view {
-    -fx-border-color:  -primary-color;
-    -fx-border-width: 4;
-    -fx-background-radius: 5;
-    -fx-border-radius: 5;
-}
+/*Buttons*/
 
 .button {
     -fx-background-color: white;
@@ -42,7 +27,6 @@
 
 .button.inverted {
     -fx-background-color: -primary-color;
-    -fx-border-color:  -primary-color;
 
     -fx-text-fill: white;
 }
@@ -51,6 +35,8 @@
     -fx-background-color: -background-color;
     -fx-border-width: 0;
 }
+
+/*Text*/
 
 Text {
     -fx-fill: -primary-color;
@@ -66,7 +52,7 @@ Text {
 
 .text-field.primary {
     -fx-border-color: -primary-color;
-    -fx-font-size: 24px;
+    -fx-font-size: 22px;
 }
 
 .text-field.secondary  {
@@ -79,21 +65,40 @@ Text {
     -fx-font-size: 18px;
 }
 
+.info {
+    -fx-fill: black;
+}
+
+/*Panes and other components*/
+
 .scroll-pane {
     -fx-border-radius: 5;
     -fx-background-radius: 5;
     -fx-border-color: grey;
 }
 
-.info {
-    -fx-fill: black;
+.list-view {
+    -fx-border-color:  -primary-color;
+    -fx-border-width: 4;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
 }
 
 .rectangle {
-    -fx-stroke-width: 4;
     -fx-stroke: -primary-color;
+    -fx-stroke-width: 4;
 }
 
+/*Specific Elements*/
 
+#cardGridPane {
+    -fx-background-radius: 50;
+    -fx-background-color: -primary-color;
+}
 
-
+#imagePane {
+    -fx-background-image: url("../images/frame.png");
+    -fx-background-size: contain;
+    -fx-background-position: bottom;
+    -fx-background-repeat: no-repeat;
+}
