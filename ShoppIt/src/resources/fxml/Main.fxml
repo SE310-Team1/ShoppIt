@@ -11,7 +11,6 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@../css/application.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainController">
@@ -41,9 +40,6 @@
                            <VBox.margin>
                               <Insets left="75.0" />
                            </VBox.margin>
-                           <font>
-                              <Font name="System Bold" size="28.0" />
-                           </font>
                         </Text>
                         <ListView fx:id="MainListView" editable="true" fixedCellSize="160.0" prefWidth="700.0" VBox.vgrow="ALWAYS">
                            <VBox.margin>
@@ -54,9 +50,6 @@
                            <VBox.margin>
                               <Insets bottom="70.0" left="75.0" right="75.0" top="30.0" />
                            </VBox.margin>
-                           <font>
-                              <Font name="Avenir Next Bold" size="24.0" />
-                           </font>
                         </Button>
                      </children>
                   </VBox>

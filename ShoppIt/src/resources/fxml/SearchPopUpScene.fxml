@@ -11,10 +11,9 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: eeeeee;" stylesheets="@../css/application.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SearchPopUpController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@../css/application.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SearchPopUpController">
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
    </padding>
@@ -33,19 +32,13 @@
                      </graphic>
                   </Button>
                   <Text layoutX="252.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select an Item" AnchorPane.bottomAnchor="9.0" AnchorPane.topAnchor="6.0">
-                     <font>
-                        <Font name="System Bold" size="36.0" />
-                     </font>
                   </Text>
                </children>
             </AnchorPane>
             <AnchorPane>
                <children>
                   <TextField fx:id="searchTextField" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="580.0" styleClass="primary" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                  <Button fx:id="searchButton" mnemonicParsing="false" onAction="#search" prefHeight="40.0" prefWidth="150.0" styleClass="inverted" text="Search" textFill="WHITE" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <font>
-                        <Font name="Avenir Next Bold" size="16.0" />
-                     </font>
+                  <Button fx:id="searchButton" mnemonicParsing="false" onAction="#search" prefHeight="40.0" prefWidth="150.0" styleClass="inverted" text="Search" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <graphic>
                         <ImageView fitHeight="15.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                            <image>
