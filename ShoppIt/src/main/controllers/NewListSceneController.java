@@ -1,20 +1,17 @@
 package controllers;
 
+import database.models.FoodItem;
 import helpers.DisplayFoodItems;
 import helpers.InfoStore;
 import helpers.ScreenHandler;
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import javafx.scene.input.MouseEvent;
 
 import java.util.ArrayList;
 import java.util.List;
-import database.models.FoodItem;
+import java.util.Set;
+
 import database.models.Item;
 
 /*
@@ -26,14 +23,14 @@ public class NewListSceneController {
     private ListView<String> newListListView;
 
 	InfoStore store = InfoStore.getInstance();
-	List<Item> itemList = store.getList();
+	Set<FoodItem> itemList = store.getItems();
 
 	@FXML
 	public void initialize() {
-		itemList = store.getList();
+		itemList = store.getItems();
 
 		List<String> foodNames = new ArrayList<String>();
-		foodNames = DisplayFoodItems.ListFoodItems(itemList);
+		foodNames = DisplayFoodItems.ListFoodItems(itemList.stream().toList());
 		newListListView.getItems().addAll(foodNames);
 		// load stuff into labels
 		// individualListSceneTitle.setText("HI");
@@ -60,11 +57,15 @@ public class NewListSceneController {
 
 	// Runs when the back button is pressed
 	public void buttonBack(ActionEvent e) {
+		store.resetInfoStore();
 		ScreenHandler.changeTo("main");
 	}
 
 	/// Runs when the submit button is pressed
 	public void buttonSubmit(ActionEvent e) {
+
+		store.persistItems();
+
 		ScreenHandler.changeTo("main");
 		//insert submission to database
 	}

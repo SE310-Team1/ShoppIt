@@ -2,13 +2,15 @@ package database.models;
 
 import jakarta.persistence.*;
 
+import java.util.Objects;
+
 @Entity
 @Table(name = "FOOD_ITEMS")
 public class FoodItem {
     @Id
     @GeneratedValue
     private int id;
-    @Column(name = "product_name")
+    @Column(name = "product_name", unique = true)
     private String productName;
     @Column(name = "image_filename")
     private String imgFilename;
@@ -68,5 +70,23 @@ public class FoodItem {
     public int getId() {
         return id;
     }
+
+    public void setImgFilename(String imgFilename) {
+        this.imgFilename = imgFilename;
+    }
+
+   @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        FoodItem foodItem = (FoodItem) o;
+        return id == foodItem.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
 }
 
