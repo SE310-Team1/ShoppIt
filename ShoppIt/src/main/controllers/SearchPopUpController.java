@@ -60,7 +60,7 @@ public class SearchPopUpController implements Initializable {
 		
 		//Retrieves all food items for the database 
 		DatabaseManager databaseManager = new DatabaseManager();
-		List<FoodItem> foodItemObjects = databaseManager.getFromDatabase(FoodItem.class,"FROM FoodItem");
+		List<FoodItem> foodItemObjects = databaseManager.getTable(FoodItem.class,"FoodItem");
 
 		try {
 			for (FoodItem item : foodItemObjects) {

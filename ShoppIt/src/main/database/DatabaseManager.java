@@ -68,7 +68,7 @@ public class DatabaseManager {
      * @param <T>
      * @return
      */
-    public <T> List<T> getFromDatabase(Class<T> targetClass, String HQLQuery) {
+    private <T> List<T> getFromDatabase(Class<T> targetClass, String HQLQuery) {
         Transaction tx = null;
         List<T> list;
 
