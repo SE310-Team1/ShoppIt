@@ -1,5 +1,9 @@
 /*Variables*/
 
+* {
+    -background-color: #EEEEEE;
+}
+
 .root {
     -fx-background-color: -background-color;
 }

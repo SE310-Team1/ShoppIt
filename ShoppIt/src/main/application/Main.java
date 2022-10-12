@@ -16,6 +16,7 @@ public class Main extends Application {
 		try {
 			Scene scene = new Scene(new Pane());
 			scene.getStylesheets().add(getClass().getResource("/css/application.css").toExternalForm());
+			scene.getStylesheets().add(getClass().getResource("/css/theme2.css").toExternalForm());
 			setScreens(scene);
 			
 			primaryStage.setTitle("ShoppIt");
