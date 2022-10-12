@@ -1,5 +1,6 @@
 package controllers;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
@@ -14,12 +15,17 @@ import helpers.ScreenHandler;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 
 public class MainController implements Initializable {
 
     @FXML
     private ListView<String> MainListView;
+
+    @FXML
+    private Button AddListButton;
 
     InfoStore store = InfoStore.getInstance();
     //List<List<Item>> lists = new LinkedList<>();
@@ -51,6 +57,18 @@ public class MainController implements Initializable {
         Set<FoodItem> newList = new HashSet<>();
         store.setItems(newList);
         ScreenHandler.changeTo("newListScene");
+    }
+
+    public void changeTheme(ActionEvent e) {
+        Scene scene = AddListButton.getScene();
+        if (scene.getStylesheets().contains("/css/theme2.css")){
+            scene.getStylesheets().remove("/css/theme2.css");
+            scene.getStylesheets().add("/css/theme1.css");
+        } else {
+            scene.getStylesheets().remove("/css/theme1.css");
+            scene.getStylesheets().add("/css/theme2.css");
+        }
+
     }
 
 }
