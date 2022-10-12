@@ -39,6 +39,11 @@ public class DatabaseManager {
         tx.commit();
     }
 
+    public void close() {
+        session.close();
+        session = null;
+    }
+
     /**
      * @param targetClass
      * @param HQLQuery    For getting all items of a particular class use "FROM classname"

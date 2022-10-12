@@ -28,23 +28,27 @@ public class MainController implements Initializable {
     // Set up lists in main scene
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
+
         DatabaseManager DB = new DatabaseManager();
+        try {
+            lists = DB.getFromDatabase(ShoppingList.class, "FROM ShoppingList s");
 
-        lists = DB.getFromDatabase(ShoppingList.class, "FROM ShoppingList s");
-
-        for (int i = 0; i < lists.size(); i++) {
-            MainListView.getItems().add("List" + Integer.toString(i));
-        }
-
-        MainListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
-                int position = MainListView.getSelectionModel().getSelectedIndex();
-                store.setShoppingList(lists.get(position));
-                
-                ScreenHandler.changeTo("individualListScene");
+            for (int i = 0; i < lists.size(); i++) {
+                MainListView.getItems().add("List" + Integer.toString(i));
             }
-        });
+
+            MainListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+                @Override
+                public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
+                    int position = MainListView.getSelectionModel().getSelectedIndex();
+                    store.setShoppingList(lists.get(position));
+
+                    ScreenHandler.changeTo("individualListScene");
+                }
+            });
+        } finally {
+            DB.close();
+        }
     }
 
     public void newList(ActionEvent e) {
