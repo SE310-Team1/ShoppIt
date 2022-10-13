@@ -60,6 +60,8 @@ public class SearchPopUpController implements Initializable {
 		
 		//Retrieves all food items for the database 
 		DatabaseManager databaseManager = new DatabaseManager();
+		List<FoodItem> foodItemObjects = databaseManager.getTable(FoodItem.class,"FoodItem");
+
 		try {
 			// can remove these lines once the code is ran once as the database is preserved afterwards
 			databaseManager.updateImage("Carrots", "carrots.png");

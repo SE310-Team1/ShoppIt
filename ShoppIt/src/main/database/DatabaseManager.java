@@ -45,12 +45,35 @@ public class DatabaseManager {
     }
 
     /**
+     * Get a table
+     * @param targetClass Class type to be returned
+     * @param tableName Table name
+     * @return List of attributes of type targetClass from table
+     * @param <T>
+     */
+    public <T> List<T> getTable(Class<T> targetClass, String tableName) {
+        return getFromDatabase(targetClass, "FROM " + tableName);
+    }
+
+    /**
+     * Get attributes from a table
+     * @param targetClass Class type to be returned
+     * @param attribute Attribute from the table
+     * @param tableName Table name
+     * @return List of attributes of type targetClass from table
+     * @param <T>
+     */
+    public <T> List<T> getAttributeList(Class<T> targetClass, String attribute, String tableName) {
+        return getFromDatabase(targetClass, "SELECT s." + attribute + " FROM " + tableName + " s");
+    }
+
+    /**
      * @param targetClass
      * @param HQLQuery    For getting all items of a particular class use "FROM classname"
      * @param <T>
      * @return
      */
-    public <T> List<T> getFromDatabase(Class<T> targetClass, String HQLQuery) {
+    private <T> List<T> getFromDatabase(Class<T> targetClass, String HQLQuery) {
         Transaction tx = null;
         List<T> list;
 
