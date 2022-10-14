@@ -29,6 +29,11 @@
     -fx-text-fill: white;
 }
 
+.rounded {
+    -fx-background-radius: 100;
+    -fx-border-radius: 100;
+}
+
 .button.image {
     -fx-background-color: -background-color;
     -fx-border-width: 0;
