@@ -1,9 +1,7 @@
 package database;
 
 import database.models.FoodItem;
-import database.models.Item;
 import database.models.ShoppingList;
-import jakarta.persistence.NoResultException;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -13,18 +11,16 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 public class DatabaseManager {
     private Session session;
 
     public DatabaseManager() {
-        Configuration con = new Configuration().configure().addAnnotatedClass(FoodItem.class).addAnnotatedClass(Item.class).addAnnotatedClass(ShoppingList.class);
+        Configuration con = new Configuration().configure().addAnnotatedClass(FoodItem.class).addAnnotatedClass(ShoppingList.class);
         ServiceRegistry registry = new StandardServiceRegistryBuilder().applySettings(con.getProperties()).build();
         SessionFactory sessionFactory = con.buildSessionFactory(registry);
         session = sessionFactory.openSession();
-
     }
 
     public void addObject(Object o) {
