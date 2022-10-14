@@ -21,14 +21,14 @@
             <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
                <children>
                   <Pane id="imagePane" stylesheets="@../css/application.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                  <VBox AnchorPane.bottomAnchor="-21.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <VBox styleClass="inverted" AnchorPane.bottomAnchor="-21.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <HBox prefHeight="100.0" prefWidth="200.0">
                            <children>
                               <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
                               <ImageView fx:id="titleText" fitHeight="110.0" fitWidth="334.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../images/name.png" />
+                                    <Image url="@../images/name_1.png" />
                                  </image>
                               </ImageView>
                               <Region prefHeight="105.0" prefWidth="129.0" HBox.hgrow="ALWAYS" />

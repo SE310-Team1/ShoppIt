@@ -18,6 +18,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class MainController implements Initializable {
 
@@ -26,6 +28,9 @@ public class MainController implements Initializable {
 
     @FXML
     private Button AddListButton;
+
+    @FXML
+    private ImageView titleText;
 
     InfoStore store = InfoStore.getInstance();
     //List<List<Item>> lists = new LinkedList<>();
@@ -61,14 +66,23 @@ public class MainController implements Initializable {
 
     public void changeTheme(ActionEvent e) {
         Scene scene = AddListButton.getScene();
+        int newTheme;
         if (scene.getStylesheets().contains("/css/theme2.css")){
             scene.getStylesheets().remove("/css/theme2.css");
             scene.getStylesheets().add("/css/theme1.css");
+            newTheme = 1;
         } else {
             scene.getStylesheets().remove("/css/theme1.css");
             scene.getStylesheets().add("/css/theme2.css");
+            newTheme = 2;
         }
 
+        updateImageColours(newTheme);
+
+    }
+
+    public void updateImageColours(int themeNum) {
+        titleText.setImage(new Image("./images/name_" + themeNum + ".png"));
     }
 
 }
