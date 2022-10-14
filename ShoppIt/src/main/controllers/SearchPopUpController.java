@@ -160,6 +160,7 @@ public class SearchPopUpController implements Initializable {
 						detailedItemPopUpController.setItem(item);
 
 						scene = new Scene(root);
+						scene.getStylesheets().addAll(gridPane.getScene().getStylesheets());
 						stage = new Stage();
 						stage.setResizable(false);
 						stage.setScene(scene);
