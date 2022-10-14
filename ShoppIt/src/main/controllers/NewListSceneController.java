@@ -13,6 +13,8 @@ import java.util.List;
 import java.util.Set;
 
 import database.models.Item;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 /*
  * Controller for the new/edit list page
@@ -22,12 +24,20 @@ public class NewListSceneController {
 	@FXML
     private ListView<String> newListListView;
 
+	@FXML
+	private ImageView newListImageView;
+
+	@FXML
+	private ImageView crossImageView;
+
 	InfoStore store = InfoStore.getInstance();
 	Set<FoodItem> itemList = store.getItems();
 
 	@FXML
 	public void initialize() {
 		itemList = store.getItems();
+
+		colourImages();
 
 		List<String> foodNames = new ArrayList<String>();
 		foodNames = DisplayFoodItems.ListFoodItems(itemList.stream().toList());
@@ -68,6 +78,13 @@ public class NewListSceneController {
 
 		ScreenHandler.changeTo("main");
 		//insert submission to database
+	}
+
+	public void colourImages() {
+		List<ImageView> imageViewList = new ArrayList<ImageView>();
+		imageViewList.add(crossImageView);
+		imageViewList.add(newListImageView);
+		ScreenHandler.colourImages(imageViewList);
 	}
 
 }

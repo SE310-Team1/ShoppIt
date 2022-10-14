@@ -59,12 +59,12 @@
             </GridPane>
          </children>
       </VBox>
-      <Button fx:id="detailedItemAddButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#addToList" prefHeight="50.0" prefWidth="500.0" styleClass="inverted" text="Add to List" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"></Button>
+      <Button fx:id="detailedItemAddButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#addToList" prefHeight="50.0" prefWidth="500.0" styleClass="inverted" text="Add to List" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
       <Button fx:id="detailedItemExitButton" layoutX="60.0" layoutY="60.0" mnemonicParsing="false" onAction="#exitPopUp" prefHeight="24.0" prefWidth="35.0" styleClass="image" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <graphic>
-            <ImageView fitHeight="34.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="arrowImageView" fitHeight="34.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../images/arrow.png" />
+                  <Image url="@../images/arrow_1.png" />
                </image>
             </ImageView>
          </graphic></Button>

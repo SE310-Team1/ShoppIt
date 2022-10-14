@@ -39,6 +39,8 @@ public class MainController implements Initializable {
     // Set up lists in main scene
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
+        colourImages();
+
         DatabaseManager DB = new DatabaseManager();
 
         lists = DB.getFromDatabase(ShoppingList.class, "FROM ShoppingList s");
@@ -77,12 +79,14 @@ public class MainController implements Initializable {
             newTheme = 2;
         }
 
-        updateImageColours(newTheme);
+        colourImages();
 
     }
 
-    public void updateImageColours(int themeNum) {
-        titleText.setImage(new Image("./images/name_" + themeNum + ".png"));
+    public void colourImages() {
+        List<ImageView> imageViewList = new ArrayList<ImageView>();
+        imageViewList.add(titleText);
+        ScreenHandler.colourImages(imageViewList);
     }
 
 }
