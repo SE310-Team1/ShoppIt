@@ -56,9 +56,9 @@ public class SearchPopUpController implements Initializable {
 		
 		//Retrieves all food items for the database 
 		DatabaseManager databaseManager = new DatabaseManager();
-		List<FoodItem> foodItemObjects = databaseManager.getTable(FoodItem.class,"FoodItem");
+		List<FoodItem> foodItemObjects = databaseManager.getTableSorted(FoodItem.class,"FoodItem","productName");
 		//temporary fix to sort since query
-		 foodItemObjects = foodItemObjects.stream().sorted((Comparator.comparing(FoodItem::getProductName))).toList();
+		// foodItemObjects = foodItemObjects.stream().sorted((Comparator.comparing(FoodItem::getProductName))).toList();
 
 		try {
 			for (FoodItem item : foodItemObjects) {
