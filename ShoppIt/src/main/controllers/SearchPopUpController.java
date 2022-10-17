@@ -108,7 +108,7 @@ public class SearchPopUpController implements Initializable {
 			}
 		}
 		
-		return filteredList;
+		return filteredList.stream().sorted().toList();
 	}
 	
 	public FoodItem getItemKeyByValue(String value) {
