@@ -2,13 +2,9 @@ package controllers;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 import java.util.Map.Entry;
-import java.util.Objects;
-import java.util.ResourceBundle;
+import java.util.stream.Stream;
 
 import database.DatabaseManager;
 import database.models.FoodItem;
