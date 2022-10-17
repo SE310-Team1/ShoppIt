@@ -12,8 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-import database.models.Item;
-
 /*
  * Controller for the new/edit list page
  */
