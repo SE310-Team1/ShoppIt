@@ -3,9 +3,7 @@ package helpers;
 import java.util.ArrayList;
 import java.util.List;
 
-import database.DatabaseManager;
 import database.models.FoodItem;
-import database.models.Item;
 
 public class DisplayFoodItems {
 

@@ -43,7 +43,7 @@ public class MainController implements Initializable {
 
         DatabaseManager DB = new DatabaseManager();
 
-        lists = DB.getFromDatabase(ShoppingList.class, "FROM ShoppingList s");
+        lists = DB.getTable(ShoppingList.class, "ShoppingList");
 
         for (int i = 0; i < lists.size(); i++) {
             MainListView.getItems().add("List" + Integer.toString(i));
