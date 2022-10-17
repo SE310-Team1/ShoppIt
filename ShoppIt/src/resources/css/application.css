@@ -98,6 +98,10 @@ Text {
 #cardGridPane {
     -fx-background-radius: 50;
     -fx-background-color: -primary-color;
+    -fx-border-color: -tertiary-color;
+    -fx-border-radius: 50;
+    -fx-border-width: 2;
+    -fx-border-style: outset;
 }
 
 #imagePane {
