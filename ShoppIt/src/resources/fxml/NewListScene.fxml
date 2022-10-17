@@ -45,12 +45,12 @@
                         <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
-                  <TextField fx:id="NewListTitle" prefHeight="49.0" prefWidth="698.0" styleClass="secondary" text="Title">
+                  <TextField fx:id="newListTitle" prefHeight="49.0" prefWidth="698.0" promptText="Title" styleClass="secondary">
                      <VBox.margin>
                         <Insets left="50.0" right="50.0" top="20.0" />
                      </VBox.margin>
                   </TextField>
-                  <TextField fx:id="NewListDescription" alignment="TOP_LEFT" prefHeight="80.0" prefWidth="698.0" styleClass="tertiary" text="Description">
+                  <TextField fx:id="newListDescription" alignment="TOP_LEFT" prefHeight="80.0" prefWidth="698.0" promptText="Description" styleClass="tertiary">
                      <VBox.margin>
                         <Insets bottom="10.0" left="50.0" right="50.0" top="10.0" />
                      </VBox.margin>
