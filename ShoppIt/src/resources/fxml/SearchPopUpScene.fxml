@@ -19,7 +19,7 @@
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
    </padding>
    <children>
-      <VBox alignment="TOP_CENTER" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox alignment="TOP_CENTER" layoutX="40.0" layoutY="40.0" prefHeight="2008.0" prefWidth="760.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="0.0">
          <children>
             <AnchorPane>
                <children>
@@ -38,8 +38,8 @@
             </AnchorPane>
             <HBox prefHeight="40.0" prefWidth="760.0">
                <children>
-                  <TextField fx:id="searchTextField" maxHeight="50.0" maxWidth="1.7976931348623157E308" minHeight="50.0" prefHeight="50.0" prefWidth="646.0" styleClass="primary" />
-                  <Region prefHeight="50.0" prefWidth="35.0" />
+                  <TextField fx:id="searchTextField" maxHeight="50.0" maxWidth="1.7976931348623157E308" minHeight="50.0" prefHeight="50.0" prefWidth="571.0" styleClass="primary" />
+                  <Region prefHeight="50.0" prefWidth="38.0" />
                   <Button fx:id="searchButton" maxHeight="50.0" minHeight="50.0" mnemonicParsing="false" onAction="#search" prefHeight="50.0" prefWidth="155.0" styleClass="inverted" text="Search">
                      <graphic>
                         <ImageView fitHeight="15.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
@@ -53,7 +53,7 @@
             </HBox>
             <HBox prefHeight="793.0" prefWidth="760.0">
                <children>
-                  <ScrollPane prefHeight="818.0" prefWidth="760.0">
+                  <ScrollPane prefHeight="2036.0" prefWidth="720.0">
                      <content>
                         <GridPane fx:id="gridPane" prefHeight="389.0" prefWidth="749.0">
                           <columnConstraints>
