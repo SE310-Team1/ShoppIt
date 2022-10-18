@@ -38,8 +38,8 @@
             </AnchorPane>
             <HBox prefHeight="40.0" prefWidth="760.0">
                <children>
-                  <TextField fx:id="searchTextField" maxHeight="50.0" maxWidth="1.7976931348623157E308" minHeight="50.0" prefHeight="50.0" prefWidth="558.0" styleClass="primary" />
-                  <Region prefHeight="59.0" prefWidth="65.0" />
+                  <TextField fx:id="searchTextField" maxHeight="50.0" maxWidth="1.7976931348623157E308" minHeight="50.0" prefHeight="50.0" prefWidth="646.0" styleClass="primary" />
+                  <Region prefHeight="50.0" prefWidth="35.0" />
                   <Button fx:id="searchButton" maxHeight="50.0" minHeight="50.0" mnemonicParsing="false" onAction="#search" prefHeight="50.0" prefWidth="155.0" styleClass="inverted" text="Search">
                      <graphic>
                         <ImageView fitHeight="15.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">

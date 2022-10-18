@@ -69,6 +69,18 @@ Text {
     -fx-font-size: 18px;
 }
 
+.card-text {
+    -fx-text-fill: -background-color;
+    -fx-font-size: 12;
+    -fx-font: "Avenir Book";
+}
+
+.list-card-text {
+    -fx-text-fill: -background-color;
+    -fx-font-size: 20;
+    -fx-font: "Avenir Book";
+}
+
 .info {
     -fx-fill: black;
     -fx-font-family: "Avenir Book";
@@ -111,6 +123,9 @@ Text {
     -fx-background-repeat: no-repeat;
 }
 
-#main_list_view {
-    -fx-border-color: white;
+.scroll-pane {
+    -fx-border-width: 4;
+    -fx-background-color: white;
+    -fx-border-color: -primary-color;
 }
+
