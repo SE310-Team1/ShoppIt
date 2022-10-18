@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane onMouseClicked="#click" prefHeight="50.0" prefWidth="760.0" stylesheets="@../css/application.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.IndividualFruitListController">
+<AnchorPane onMouseClicked="#click" prefHeight="50.0" prefWidth="767.0" stylesheets="@../css/application.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.IndividualFruitListController">
    <children>
-      <GridPane fx:id="cardGridPane" prefHeight="50.0" prefWidth="591.0">
+      <GridPane fx:id="cardGridPane" prefHeight="50.0" prefWidth="697.0">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="492.0" minWidth="10.0" prefWidth="27.399981689453114" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="492.0" minWidth="10.0" prefWidth="126.0000244140625" />
@@ -31,10 +31,13 @@
                   <Font name="Dubai Bold" size="12.0" />
                </font>
             </Label>
-            <Label fx:id="priceLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="66.0" prefWidth="162.0" text="Price" textFill="#eeeeee" GridPane.columnIndex="4">
+            <Label fx:id="priceLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="137.0" text="Price" textFill="#eeeeee" GridPane.columnIndex="4">
                <font>
                   <Font name="Dubai Bold" size="12.0" />
-               </font></Label>
+               </font>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin></Label>
             <Label fx:id="calorieLabel" alignment="CENTER" prefHeight="50.0" prefWidth="152.0" text="Calories" textFill="#eeeeee" GridPane.columnIndex="3">
                <font>
                   <Font name="Dubai Bold" size="12.0" />
