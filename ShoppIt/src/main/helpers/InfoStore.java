@@ -10,6 +10,8 @@ public class InfoStore {
 	private static InfoStore instance = null;
     private static Set<FoodItem> items;
     private static ShoppingList newShoppingList = null;
+    private static String title;
+    private static String description;
     
     public static InfoStore getInstance() {
 		if (instance == null) {
@@ -18,20 +20,42 @@ public class InfoStore {
 		return instance;
 	}
 
-    public static void setItems(Set<FoodItem> items) {
+    public void setItems(Set<FoodItem> items) {
         InfoStore.items = items;
     }
 
-    public static void setShoppingList(ShoppingList newShoppingList){
+    public void setShoppingList(ShoppingList newShoppingList){
         InfoStore.newShoppingList = newShoppingList;
         items = newShoppingList.getItems();
+        title = newShoppingList.getTitle();
+        description = newShoppingList.getDescription();
     }
 
     public Set<FoodItem> getItems() {
         return items;
     }
 
-    public static void persistItems(){
+    public  ShoppingList getShoppingList() {
+        return newShoppingList;
+    }
+
+    public  String getTitle() {
+        return title;
+    }
+
+    public  void setTitle(String title) {
+        InfoStore.title = title;
+    }
+
+    public  String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        InfoStore.description = description;
+    }
+
+    public void persistItems(){
 
         if(items.isEmpty()){
             resetInfoStore();
@@ -45,18 +69,32 @@ public class InfoStore {
          */
         if(newShoppingList == null){
             newShoppingList = new ShoppingList();
-            newShoppingList.getItems().addAll(items);
+
+            makeShoppingList();
             databaseManager.addObject(newShoppingList);
 
         } else {
-            newShoppingList.getItems().addAll(items);
+            makeShoppingList();
             databaseManager.updateObject(newShoppingList);
         }
        resetInfoStore();
     }
 
-    public static void resetInfoStore(){
+    private static void makeShoppingList(){
+        newShoppingList.getItems().addAll(items);
+
+        if (title == null) {
+            title = "New list";
+        }
+        newShoppingList.setTitle(title);
+        newShoppingList.setDescription(description);
+
+    }
+
+    public void resetInfoStore(){
         items.clear();
+        title = null;
+        description = null;
         newShoppingList = null;
 
     }
