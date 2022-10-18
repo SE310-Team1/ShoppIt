@@ -50,9 +50,12 @@ public class MainController implements Initializable {
         for (int i = 0; i < lists.size(); i++) {
 
             /* creating input arguments */
+                /* fxml input arg */
             String listCardViewFxmlLocation = "/fxml/Individual_List_CardDisplay.fxml";
-            Object[] args = new Object[1];
-            args[0] = "TEST LIST NAME";
+                /* card view cotroller input argument */
+            Object[] args = new Object[2];
+            args[0] = lists.get(i).getTitle(); //set the title
+            args[1] = lists.get(i).getDescription(); //set the description
 
             /* try to create view */
             try {
