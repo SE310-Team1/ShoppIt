@@ -10,6 +10,7 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
@@ -18,7 +19,7 @@
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
    </padding>
    <children>
-      <VBox alignment="TOP_CENTER" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox alignment="TOP_CENTER" layoutX="40.0" layoutY="40.0" prefHeight="2008.0" prefWidth="760.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="0.0">
          <children>
             <AnchorPane>
                <children>
@@ -31,14 +32,15 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Text layoutX="252.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select an Item" AnchorPane.bottomAnchor="9.0" AnchorPane.topAnchor="6.0">
+                  <Text layoutX="316.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select an Item" AnchorPane.bottomAnchor="19.215999603271484" AnchorPane.topAnchor="17.0">
                   </Text>
                </children>
             </AnchorPane>
-            <AnchorPane>
+            <HBox prefHeight="40.0" prefWidth="760.0">
                <children>
-                  <TextField fx:id="searchTextField" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="580.0" styleClass="primary" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                  <Button fx:id="searchButton" mnemonicParsing="false" onAction="#search" prefHeight="40.0" prefWidth="150.0" styleClass="inverted" text="Search" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <TextField fx:id="searchTextField" maxHeight="50.0" maxWidth="1.7976931348623157E308" minHeight="50.0" prefHeight="50.0" prefWidth="571.0" styleClass="primary" />
+                  <Region prefHeight="50.0" prefWidth="38.0" />
+                  <Button fx:id="searchButton" maxHeight="50.0" minHeight="50.0" mnemonicParsing="false" onAction="#search" prefHeight="50.0" prefWidth="155.0" styleClass="inverted" text="Search">
                      <graphic>
                         <ImageView fitHeight="15.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -48,12 +50,12 @@
                      </graphic>
                   </Button>
                </children>
-            </AnchorPane>
-            <HBox prefHeight="433.0" prefWidth="760.0">
+            </HBox>
+            <HBox prefHeight="793.0" prefWidth="760.0">
                <children>
-                  <ScrollPane prefHeight="100.0" prefWidth="762.0">
+                  <ScrollPane prefHeight="2036.0" prefWidth="720.0">
                      <content>
-                        <GridPane fx:id="gridPane">
+                        <GridPane fx:id="gridPane" prefHeight="389.0" prefWidth="749.0">
                           <columnConstraints>
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                           </columnConstraints>

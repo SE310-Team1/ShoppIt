@@ -11,7 +11,7 @@ import javafx.scene.image.ImageView;
 public class IndividualFruitListController {
 
     @FXML
-    private Label fruitNameLabel, calorieLabel, priceLabel;
+    private Label foodNameLabel, calorieLabel, priceLabel;
 
     @FXML
     private ImageView foodImage;
@@ -26,7 +26,7 @@ public class IndividualFruitListController {
 
     public void setData(FoodItem item) {
         this.item = item;
-        fruitNameLabel.setText(item.getProductName());
+        foodNameLabel.setText(item.getProductName());
         calorieLabel.setText("Calories: " + item.getTotalCalories());
         priceLabel.setText(item.getPrice());
         foodImage.setImage(new Image("/images/" + item.getImgFilename()));

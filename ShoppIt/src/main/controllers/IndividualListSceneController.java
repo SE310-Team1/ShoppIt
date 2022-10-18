@@ -7,8 +7,10 @@ import helpers.ScreenHandler;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
+import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -19,6 +21,9 @@ public class IndividualListSceneController {
 
 	@FXML
     private ListView<String> ItemListView;
+
+	@FXML
+	ImageView arrowImageView;
 	
 	InfoStore store = InfoStore.getInstance();
 	Set<FoodItem> itemSet;
@@ -34,6 +39,9 @@ public class IndividualListSceneController {
 
 	@FXML
 	public void initialize() {
+
+		colourImages();
+
 		itemSet = store.getItems();
 
 		List<String> foodNames = DisplayFoodItems.ListFoodItems(itemSet.stream().toList());
@@ -64,6 +72,12 @@ public class IndividualListSceneController {
 	/// Runs when the edit button is pressed
 	public void buttonEdit(ActionEvent e) {
 		ScreenHandler.changeTo("newListScene");
+	}
+
+	public void colourImages() {
+		List<ImageView> imageViewList = new ArrayList<ImageView>();
+		imageViewList.add(arrowImageView);
+		ScreenHandler.colourImages(imageViewList);
 	}
 
 }

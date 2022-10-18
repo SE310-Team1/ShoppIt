@@ -15,9 +15,8 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@../css/application.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.NewListSceneController">
    <children>
       <SplitPane orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <items>
-      
-                              <VBox alignment="CENTER">
+         <items>
+            <VBox alignment="CENTER" styleClass="root">
                <children>
                   <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
@@ -60,7 +59,7 @@
                         <Insets left="50.0" right="50.0" top="10.0" />
                      </VBox.margin>
                   </Button>
-                  <ListView fx:id="newListListView">
+                  <ListView fx:id="newListListView" prefHeight="918.0" prefWidth="698.0">
                      <VBox.margin>
                         <Insets bottom="20.0" left="50.0" right="50.0" top="20.0" />
                      </VBox.margin>
@@ -92,7 +91,7 @@
                   </HBox>
                </children>
             </VBox>
-        </items>
+         </items>
       </SplitPane>
    </children>
 </AnchorPane>
