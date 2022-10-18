@@ -36,11 +36,6 @@ public class DatabaseManager {
         tx.commit();
     }
 
-    public void close() {
-        session.close();
-        session = null;
-    }
-
     /**
      * Get a table
      * @param targetClass Class type to be returned
