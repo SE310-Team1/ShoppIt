@@ -9,7 +9,7 @@ import javafx.scene.control.Label;
 public class IndividualFruitListController {
 
     @FXML
-    private Label fruitNameLabel;
+    private Label fruitNameLabel, calorieLabel, priceLabel;
 
     @FXML
     private void click(ActionEvent actionEvent) {
@@ -22,6 +22,8 @@ public class IndividualFruitListController {
     public void setData(FoodItem item) {
         this.item = item;
         fruitNameLabel.setText(item.getProductName());
+        calorieLabel.setText("Calories: " + item.getTotalCalories());
+        priceLabel.setText(item.getPrice());
 
 
     }
