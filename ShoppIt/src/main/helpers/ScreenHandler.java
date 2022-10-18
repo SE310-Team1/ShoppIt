@@ -2,10 +2,13 @@ package helpers;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class ScreenHandler {
 	private static HashMap<String, String> nameMap = new HashMap<>();
@@ -33,6 +36,26 @@ public class ScreenHandler {
 			main.setRoot( pane );
 		} catch (IOException e) {
 			e.printStackTrace();
+		}
+	}
+
+	public static void colourImages(List<ImageView> imageViewList) {
+		int themeNum = determineTheme();
+		for (ImageView imageView : imageViewList) {
+
+			String imageURL = imageView.getImage().getUrl();
+			String imageName = imageURL.substring(imageURL.lastIndexOf('/'),imageURL.lastIndexOf('_'));
+
+			String imagePath = ("./images" + imageName + "_" + themeNum + ".png");
+			imageView.setImage(new Image(imagePath));
+		}
+	}
+
+	public static int determineTheme() {
+		if (main.getStylesheets().contains("/css/theme2.css")) {
+			return 2;
+		} else {
+			return 1;
 		}
 	}
 

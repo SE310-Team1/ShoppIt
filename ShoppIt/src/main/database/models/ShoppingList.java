@@ -19,8 +19,7 @@ public class ShoppingList {
 
     private String description;
 
-    @ManyToMany
-    @org.hibernate.annotations.Fetch(FetchMode.SUBSELECT)
+    @ManyToMany(fetch = FetchType.EAGER)
     @Cascade(CascadeType.MERGE)
     private Set<FoodItem> items = new HashSet<>();
 

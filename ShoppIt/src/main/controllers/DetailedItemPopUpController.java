@@ -12,9 +12,14 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import java.util.ArrayList;
+import java.util.List;
+
 //Class that controls the actions of the DetailedItemPopUpScene and DetailedItemPopUpSceneWithAdd 
-public class DetailedItemPopUpController{
-	
+public class DetailedItemPopUpController {
+
+	@FXML
+	private ImageView arrowImageView;
 	@FXML
 	private Text detailedItemTitle;
 	@FXML
@@ -41,7 +46,11 @@ public class DetailedItemPopUpController{
 	private Stage stage;
 	
 	private FoodItem item = new FoodItem();
-	
+
+	@FXML
+	public void initialize() {
+		colourImages();
+	}
 	
 	//Adds item to current new list. Closes item pop up afterwards.
 	public void addToList(ActionEvent event) {
@@ -94,6 +103,11 @@ public class DetailedItemPopUpController{
 	public void setItem(FoodItem item) {
 		this.item = item;
 	}
-	
+
+	public void colourImages() {
+		List<ImageView> imageViewList = new ArrayList<ImageView>();
+		imageViewList.add(arrowImageView);
+		ScreenHandler.colourImages(imageViewList);
+	}
 
 }

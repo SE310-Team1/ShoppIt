@@ -28,9 +28,9 @@
                            </image>
                         </ImageView>
                         <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
-                        <ImageView fx:id="titleText" fitHeight="66.0" fitWidth="261.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="newListImageView" fitHeight="66.0" fitWidth="261.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../images/new_list.png" />
+                              <Image url="@../images/new_list_1.png" />
                            </image>
                            <HBox.margin>
                               <Insets top="20.0" />
@@ -45,12 +45,12 @@
                         <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
-                  <TextField fx:id="NewListTitle" prefHeight="49.0" prefWidth="698.0" styleClass="secondary" text="Title">
+                  <TextField fx:id="newListTitle" prefHeight="49.0" prefWidth="698.0" promptText="Title" styleClass="secondary">
                      <VBox.margin>
                         <Insets left="50.0" right="50.0" top="20.0" />
                      </VBox.margin>
                   </TextField>
-                  <TextField fx:id="NewListDescription" alignment="TOP_LEFT" prefHeight="80.0" prefWidth="698.0" styleClass="tertiary" text="Description">
+                  <TextField fx:id="newListDescription" alignment="TOP_LEFT" prefHeight="80.0" prefWidth="698.0" promptText="Description" styleClass="tertiary">
                      <VBox.margin>
                         <Insets bottom="10.0" left="50.0" right="50.0" top="10.0" />
                      </VBox.margin>
@@ -69,9 +69,9 @@
                      <children>
                         <Button fx:id="saveButton1" alignment="CENTER" mnemonicParsing="false" onAction="#buttonBack" prefWidth="800.0" text="Cancel">
                            <graphic>
-                              <ImageView fitHeight="16.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="crossImageView" fitHeight="16.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../images/cross.png" />
+                                    <Image url="@../images/cross_1.png" />
                                  </image>
                               </ImageView>
                            </graphic>
