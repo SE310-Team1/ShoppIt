@@ -7,6 +7,7 @@ import helpers.ScreenHandler;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
+import javafx.scene.text.Text;
 
 import java.util.List;
 import java.util.Set;
@@ -28,10 +29,8 @@ public class IndividualListSceneController {
 	// @FXML private Label achievementsLabel = new Label();
 	// @FXML private Label helpLabel = new Label();
 
-	// @FXML private Text individualListSceneTitle = new Text();
-	// @FXML private Text individualListSceneDescription = new Text();
-	// @FXML private ListView itemListView = new ListView();
-	// @FXML private Text evaluationText = new Text();
+	 @FXML private Text IndividualListSceneTitle;
+	 @FXML private Text IndividualListSceneDescription;
 
 	@FXML
 	public void initialize() {
@@ -39,11 +38,10 @@ public class IndividualListSceneController {
 
 		List<String> foodNames = DisplayFoodItems.ListFoodItems(itemSet.stream().toList());
 		ItemListView.getItems().addAll(foodNames);
-		// load stuff into labels
-		// individualListSceneTitle.setText("HI");
-		// individualListSceneDescription.setText("HI");
-		// evaluationText.setText("HI");
-		
+
+		// Load list title and description
+		IndividualListSceneTitle.setText(store.getTitle());
+		IndividualListSceneDescription.setText(store.getDescription());
 	}
 
 	// Runs when an item is pressed
