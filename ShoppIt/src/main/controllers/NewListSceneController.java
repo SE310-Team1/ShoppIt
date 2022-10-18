@@ -57,7 +57,9 @@ public class NewListSceneController {
 
 	// Runs when an item is pressed
 	public void activateItemPopup(ActionEvent e) {
-		 ScreenHandler.changeTo("searchScene");
+		store.setTitle(newListTitle.getText());
+		store.setDescription(newListDescription.getText());
+		ScreenHandler.changeTo("searchScene");
 	}
 
 	// Runs when the back button is pressed
