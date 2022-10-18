@@ -51,6 +51,20 @@ public class DatabaseManager {
     public <T> List<T> getTable(Class<T> targetClass, String tableName) {
         return getFromDatabase(targetClass, "FROM " + tableName);
     }
+    /**
+     * Get a table that is sorted by provided attribute of entity
+     * @param targetClass Class type to be returned
+     * @param tableName Table name
+     * @param  attribute Attribute from the table/entity
+     * @return List of attributes of type targetClass from table
+     * @param <T>
+     */
+
+    public <T> List<T> getTableSorted(Class<T> targetClass, String tableName, String attribute) {
+        return getFromDatabase(targetClass, "from " + tableName  + " where order by "+ attribute +" asc");
+
+    }
+
 
     /**
      * Get attributes from a table
