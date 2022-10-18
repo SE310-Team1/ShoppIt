@@ -6,6 +6,7 @@ import java.util.*;
 
 import database.models.FoodItem;
 import database.models.ShoppingList;
+import helpers.CardViewBuilder;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import database.DatabaseManager;
@@ -13,18 +14,28 @@ import database.DatabaseManager;
 import helpers.InfoStore;
 import helpers.ScreenHandler;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 public class MainController implements Initializable {
 
     @FXML
-    private ListView<String> MainListView;
+    public GridPane MainListView;
 
     @FXML
     private Button AddListButton;
@@ -88,18 +99,35 @@ public class MainController implements Initializable {
             lists = DB.getTable(ShoppingList.class, "ShoppingList");
 
             for (int i = 0; i < lists.size(); i++) {
-                MainListView.getItems().add("List" + Integer.toString(i));
-            }
 
-            MainListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-                @Override
-                public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
-                    int position = MainListView.getSelectionModel().getSelectedIndex();
-                    store.setShoppingList(lists.get(position));
+                /* creating input arguments */
+                    /* fxml input arg */
+                String listCardViewFxmlLocation = "/fxml/Individual_List_CardDisplay.fxml";
+                    /* card view cotroller input argument */
+                Object[] args = new Object[2];
+                args[0] = lists.get(i).getTitle(); //set the title
+                args[1] = lists.get(i).getDescription(); //set the description
 
-                    ScreenHandler.changeTo("individualListScene");
+                /* try to create view */
+                try {
+                    /* create a card view and append to grid pane */
+                    AnchorPane pane = CardViewBuilder.createCardView(listCardViewFxmlLocation,args);
+                    MainListView.add(pane,1,MainListView.getRowCount()); //1 since only 1 column, row count gets the index of the next row
+
+                    /* set the click listener for the view */
+                    pane.addEventHandler(MouseEvent.MOUSE_PRESSED, new EventHandler<MouseEvent>() {
+                        @Override
+                        public void handle(MouseEvent event) {
+                            Integer rowIndex = MainListView.getRowIndex(pane);
+                            store.setShoppingList(lists.get(rowIndex));
+                            ScreenHandler.changeTo("individualListScene");
+                        }
+                    });
+
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
                 }
-            });
+            }
         } finally {
             DB.close();
         }
