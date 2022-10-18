@@ -68,10 +68,12 @@ public class SearchPopUpController implements Initializable {
 				//Puts foodItem and its corresponding product name in a hashmap. Name required to populate search results list.
 				foodItems.put(item, item.getProductName());
 			}
-
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
+			databaseManager.close();
 		}
+
 		
 	}
 	
