@@ -5,11 +5,16 @@ import database.models.FoodItem;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class IndividualFruitListController {
 
     @FXML
     private Label fruitNameLabel, calorieLabel, priceLabel;
+
+    @FXML
+    private ImageView foodImage;
 
     @FXML
     private void click(ActionEvent actionEvent) {
@@ -24,6 +29,7 @@ public class IndividualFruitListController {
         fruitNameLabel.setText(item.getProductName());
         calorieLabel.setText("Calories: " + item.getTotalCalories());
         priceLabel.setText(item.getPrice());
+        foodImage.setImage(new Image("/images/" + item.getImgFilename()));
 
 
     }

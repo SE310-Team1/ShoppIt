@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -12,15 +13,17 @@
    <children>
       <GridPane fx:id="cardGridPane" prefHeight="50.0" prefWidth="591.0">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="492.0" minWidth="10.0" prefWidth="382.8" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="492.0" minWidth="10.0" prefWidth="141.40000000000003" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="284.79998779296875" minWidth="10.0" prefWidth="67.99997558593759" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="492.0" minWidth="10.0" prefWidth="27.399981689453114" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="492.0" minWidth="10.0" prefWidth="126.0000244140625" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="492.0" minWidth="10.0" prefWidth="251.6000122070312" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="492.0" minWidth="10.0" prefWidth="117.19998779296873" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="284.79998779296875" minWidth="10.0" prefWidth="109.39996337890625" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label fx:id="fruitNameLabel" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="710.0" text="Fruit Name" textFill="#eeeeee" GridPane.columnIndex="0">
+            <Label fx:id="fruitNameLabel" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="710.0" text="Fruit Name" textFill="#eeeeee" GridPane.columnIndex="2">
                <GridPane.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </GridPane.margin>
@@ -28,14 +31,15 @@
                   <Font name="Dubai Bold" size="12.0" />
                </font>
             </Label>
-            <Label fx:id="priceLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="66.0" prefWidth="162.0" text="Price" textFill="#eeeeee" GridPane.columnIndex="2">
+            <Label fx:id="priceLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="66.0" prefWidth="162.0" text="Price" textFill="#eeeeee" GridPane.columnIndex="4">
                <font>
                   <Font name="Dubai Bold" size="12.0" />
                </font></Label>
-            <Label fx:id="calorieLabel" alignment="CENTER" prefHeight="50.0" prefWidth="152.0" text="Calories" textFill="#eeeeee" GridPane.columnIndex="1">
+            <Label fx:id="calorieLabel" alignment="CENTER" prefHeight="50.0" prefWidth="152.0" text="Calories" textFill="#eeeeee" GridPane.columnIndex="3">
                <font>
                   <Font name="Dubai Bold" size="12.0" />
                </font></Label>
+            <ImageView fx:id="foodImage" fitHeight="48.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" />
          </children>
       </GridPane>
    </children>
