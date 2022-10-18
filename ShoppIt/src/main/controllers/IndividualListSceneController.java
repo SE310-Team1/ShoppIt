@@ -28,12 +28,6 @@ public class IndividualListSceneController {
 	InfoStore store = InfoStore.getInstance();
 	Set<FoodItem> itemSet;
 
-	// @FXML private Button gamesModuleButton = new Button();
-	// @FXML private Button quitButton = new Button();
-	// @FXML private ChoiceBox<String> topicChoiceBox = new ChoiceBox<>();
-	// @FXML private Label achievementsLabel = new Label();
-	// @FXML private Label helpLabel = new Label();
-
 	 @FXML private Text IndividualListSceneTitle;
 	 @FXML private Text IndividualListSceneDescription;
 
@@ -53,15 +47,11 @@ public class IndividualListSceneController {
 	}
 
 	// Runs when an item is pressed
-	public void activateItemPopup(ActionEvent e) {
-		// ScreenHandler.changeTo("gameTopic");
-	}
+	public void activateItemPopup(ActionEvent e) {}
 
 	// Runs when the search button is pressed
     // (only in edit list)
-	public void activateSearchPopup(ActionEvent e) {
-		// ScreenHandler.changeTo("gameTopic");
-	}
+	public void activateSearchPopup(ActionEvent e) {}
 
 	// Runs when the back button is pressed
 	public void buttonBack(ActionEvent e) {

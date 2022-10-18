@@ -34,7 +34,6 @@ public class MainController implements Initializable {
     private ImageView titleText;
 
     InfoStore store = InfoStore.getInstance();
-    //List<List<Item>> lists = new LinkedList<>();
     List<ShoppingList> lists = new ArrayList<>();
 
     // Set up lists in main scene
