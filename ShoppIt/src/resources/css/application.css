@@ -106,3 +106,7 @@ Text {
     -fx-background-position: bottom;
     -fx-background-repeat: no-repeat;
 }
+
+#main_list_view {
+    -fx-border-color: white;
+}
