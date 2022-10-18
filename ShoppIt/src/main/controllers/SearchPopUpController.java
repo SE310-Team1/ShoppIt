@@ -2,13 +2,9 @@ package controllers;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 import java.util.Map.Entry;
-import java.util.Objects;
-import java.util.ResourceBundle;
+import java.util.stream.Stream;
 
 import database.DatabaseManager;
 import database.models.FoodItem;
@@ -25,6 +21,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
@@ -43,6 +40,9 @@ public class SearchPopUpController implements Initializable {
 	ListView<String> searchResultsList;
 	@FXML
 	GridPane gridPane;
+
+	@FXML
+	ImageView arrowImageView;
 	
 	List<FoodItem> foodItemObjects = new ArrayList<>();
 	HashMap<FoodItem,String> foodItems = new HashMap<>();
@@ -57,10 +57,14 @@ public class SearchPopUpController implements Initializable {
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+
+		colourImages();
 		
 		//Retrieves all food items for the database 
 		DatabaseManager databaseManager = new DatabaseManager();
-		List<FoodItem> foodItemObjects = databaseManager.getTable(FoodItem.class,"FoodItem");
+		List<FoodItem> foodItemObjects = databaseManager.getTableSorted(FoodItem.class,"FoodItem","productName");
+		//temporary fix to sort since query
+		// foodItemObjects = foodItemObjects.stream().sorted((Comparator.comparing(FoodItem::getProductName))).toList();
 
 		try {
 			for (FoodItem item : foodItemObjects) {
@@ -68,10 +72,12 @@ public class SearchPopUpController implements Initializable {
 				//Puts foodItem and its corresponding product name in a hashmap. Name required to populate search results list.
 				foodItems.put(item, item.getProductName());
 			}
-
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
+			databaseManager.close();
 		}
+
 		
 	}
 	
@@ -106,7 +112,7 @@ public class SearchPopUpController implements Initializable {
 			}
 		}
 		
-		return filteredList;
+		return filteredList.stream().sorted().toList();
 	}
 	
 	public FoodItem getItemKeyByValue(String value) {
@@ -156,6 +162,7 @@ public class SearchPopUpController implements Initializable {
 						detailedItemPopUpController.setItem(item);
 
 						scene = new Scene(root);
+						scene.getStylesheets().addAll(ScreenHandler.getCurrentScreen().getScene().getStylesheets());
 						stage = new Stage();
 						stage.setResizable(false);
 						stage.setScene(scene);
@@ -178,6 +185,12 @@ public class SearchPopUpController implements Initializable {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	public void colourImages() {
+		List<ImageView> imageViewList = new ArrayList<ImageView>();
+		imageViewList.add(arrowImageView);
+		ScreenHandler.colourImages(imageViewList);
 	}
 
 }

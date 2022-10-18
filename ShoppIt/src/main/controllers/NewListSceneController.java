@@ -7,10 +7,13 @@ import helpers.ScreenHandler;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+
+import javafx.scene.image.ImageView;
 
 /*
  * Controller for the new/edit list page
@@ -19,6 +22,16 @@ public class NewListSceneController {
 
 	@FXML
     private ListView<String> newListListView;
+	@FXML
+	private TextField newListTitle;
+	@FXML
+	private TextField newListDescription;
+
+	@FXML
+	private ImageView newListImageView;
+
+	@FXML
+	private ImageView crossImageView;
 
 	InfoStore store = InfoStore.getInstance();
 	Set<FoodItem> itemList = store.getItems();
@@ -27,30 +40,24 @@ public class NewListSceneController {
 	public void initialize() {
 		itemList = store.getItems();
 
+		colourImages();
+
 		List<String> foodNames = new ArrayList<String>();
 		foodNames = DisplayFoodItems.ListFoodItems(itemList.stream().toList());
+
 		newListListView.getItems().addAll(foodNames);
 		// load stuff into labels
-		// individualListSceneTitle.setText("HI");
-		// individualListSceneDescription.setText("HI");
-		// evaluationText.setText("HI");
+		String title = store.getTitle();
+		String description = store.getDescription();
+
+		newListTitle.setText(title);
+		newListDescription.setText(description);
 		
 	}
-
-	// @FXML private Button gamesModuleButton = new Button();
-	// @FXML private Button quitButton = new Button();
-	// @FXML private ChoiceBox<String> topicChoiceBox = new ChoiceBox<>();
-	// @FXML private Label achievementsLabel = new Label();
-	// @FXML private Label helpLabel = new Label();
 
 	// Runs when an item is pressed
 	public void activateItemPopup(ActionEvent e) {
 		 ScreenHandler.changeTo("searchScene");
-	}
-
-	// Runs when the search button is pressed
-	public void activateSearchPopup(ActionEvent e) {
-		// ScreenHandler.changeTo("gameTopic");
 	}
 
 	// Runs when the back button is pressed
@@ -62,10 +69,19 @@ public class NewListSceneController {
 	/// Runs when the submit button is pressed
 	public void buttonSubmit(ActionEvent e) {
 
+		store.setTitle(newListTitle.getText());
+		store.setDescription(newListDescription.getText());
 		store.persistItems();
 
 		ScreenHandler.changeTo("main");
 		//insert submission to database
+	}
+
+	public void colourImages() {
+		List<ImageView> imageViewList = new ArrayList<ImageView>();
+		imageViewList.add(crossImageView);
+		imageViewList.add(newListImageView);
+		ScreenHandler.colourImages(imageViewList);
 	}
 
 }

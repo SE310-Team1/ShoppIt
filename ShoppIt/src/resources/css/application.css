@@ -1,9 +1,6 @@
 /*Variables*/
 
 * {
-    -primary-color: #359C57;
-    -secondary-color: #E13F18;
-    -tertiary-color: #FFA707;
     -background-color: #EEEEEE;
 }
 
@@ -30,6 +27,11 @@
     -fx-background-color: -primary-color;
 
     -fx-text-fill: white;
+}
+
+.rounded {
+    -fx-background-radius: 100;
+    -fx-border-radius: 100;
 }
 
 .button.image {
@@ -98,6 +100,10 @@ Text {
 #cardGridPane {
     -fx-background-radius: 50;
     -fx-background-color: -primary-color;
+    -fx-border-color: -tertiary-color;
+    -fx-border-radius: 50;
+    -fx-border-width: 2;
+    -fx-border-style: outset;
 }
 
 #imagePane {
