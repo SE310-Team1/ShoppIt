@@ -25,6 +25,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
@@ -43,6 +44,9 @@ public class SearchPopUpController implements Initializable {
 	ListView<String> searchResultsList;
 	@FXML
 	GridPane gridPane;
+
+	@FXML
+	ImageView arrowImageView;
 	
 	List<FoodItem> foodItemObjects = new ArrayList<>();
 	HashMap<FoodItem,String> foodItems = new HashMap<>();
@@ -57,6 +61,8 @@ public class SearchPopUpController implements Initializable {
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+
+		colourImages();
 		
 		//Retrieves all food items for the database 
 		DatabaseManager databaseManager = new DatabaseManager();
@@ -158,6 +164,7 @@ public class SearchPopUpController implements Initializable {
 						detailedItemPopUpController.setItem(item);
 
 						scene = new Scene(root);
+						scene.getStylesheets().addAll(ScreenHandler.getCurrentScreen().getScene().getStylesheets());
 						stage = new Stage();
 						stage.setResizable(false);
 						stage.setScene(scene);
@@ -180,6 +187,12 @@ public class SearchPopUpController implements Initializable {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	public void colourImages() {
+		List<ImageView> imageViewList = new ArrayList<ImageView>();
+		imageViewList.add(arrowImageView);
+		ScreenHandler.colourImages(imageViewList);
 	}
 
 }

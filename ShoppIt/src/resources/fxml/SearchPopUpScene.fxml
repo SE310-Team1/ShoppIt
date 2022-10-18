@@ -24,9 +24,9 @@
                <children>
                   <Button mnemonicParsing="false" onAction="#buttonBack" prefHeight="43.0" prefWidth="70.0" styleClass="image" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="686.0" AnchorPane.topAnchor="0.0">
                      <graphic>
-                        <ImageView fitHeight="56.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="arrowImageView" fitHeight="56.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../images/arrow.png" />
+                              <Image url="@../images/arrow_1.png" />
                            </image>
                         </ImageView>
                      </graphic>

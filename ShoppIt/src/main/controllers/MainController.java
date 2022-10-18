@@ -1,5 +1,6 @@
 package controllers;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
@@ -14,12 +15,22 @@ import helpers.ScreenHandler;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class MainController implements Initializable {
 
     @FXML
     private ListView<String> MainListView;
+
+    @FXML
+    private Button AddListButton;
+
+    @FXML
+    private ImageView titleText;
 
     InfoStore store = InfoStore.getInstance();
     //List<List<Item>> lists = new LinkedList<>();
@@ -28,6 +39,7 @@ public class MainController implements Initializable {
     // Set up lists in main scene
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
+        colourImages();
 
         DatabaseManager DB = new DatabaseManager();
         try {
@@ -55,6 +67,29 @@ public class MainController implements Initializable {
         Set<FoodItem> newList = new HashSet<>();
         store.setItems(newList);
         ScreenHandler.changeTo("newListScene");
+    }
+
+    public void changeTheme(ActionEvent e) {
+        Scene scene = AddListButton.getScene();
+        int newTheme;
+        if (scene.getStylesheets().contains("/css/theme2.css")){
+            scene.getStylesheets().remove("/css/theme2.css");
+            scene.getStylesheets().add("/css/theme1.css");
+            newTheme = 1;
+        } else {
+            scene.getStylesheets().remove("/css/theme1.css");
+            scene.getStylesheets().add("/css/theme2.css");
+            newTheme = 2;
+        }
+
+        colourImages();
+
+    }
+
+    public void colourImages() {
+        List<ImageView> imageViewList = new ArrayList<ImageView>();
+        imageViewList.add(titleText);
+        ScreenHandler.colourImages(imageViewList);
     }
 
 }
