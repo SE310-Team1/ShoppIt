@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 import java.util.Map.Entry;
-import java.util.stream.Stream;
 
 import database.DatabaseManager;
 import database.models.FoodItem;
@@ -137,7 +136,7 @@ public class SearchPopUpController implements Initializable {
 	public void setCards(FoodItem item) {
 		try {
 			FXMLLoader fxmlloader = new FXMLLoader();
-			fxmlloader.setLocation(getClass().getResource("/fxml/IndividualFruitList.fxml"));
+			fxmlloader.setLocation(getClass().getResource("/fxml/IndividualFoodItem.fxml"));
 			AnchorPane anchor = fxmlloader.load();
 
 			// Implementation of click functionality of items in list
